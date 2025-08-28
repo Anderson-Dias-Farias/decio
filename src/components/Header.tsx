@@ -34,7 +34,7 @@ const menuItems = [
 
 const menuLinks = ({
   isMobile = false,
-  isOpen,
+
   setIsOpen,
   onSelectChange,
   openPopover,

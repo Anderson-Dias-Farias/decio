@@ -71,16 +71,19 @@ const combustiveis = [
 
 // Bolhas fixas - criadas uma vez e reutilizadas
 const createFixedBubbles = () => {
-  return Array.from({ length: 45 }, (_, i) => ({
-    id: i,
-    left: `${Math.random() * 100}%`,
-    duration: Math.random() * 3 + 2,
-    size:
-      window.innerWidth < 768
-        ? `${Math.random() * 20 + 8}px`
-        : `${Math.random() * 35 + 10}px`,
-    delay: Math.random() * 2, // Delay inicial para espalhar as animações
-  }));
+  if (typeof window !== "undefined") {
+    return Array.from({ length: 45 }, (_, i) => ({
+      id: i,
+      left: `${Math.random() * 100}%`,
+      duration: Math.random() * 3 + 2,
+      size:
+        window.innerWidth < 768
+          ? `${Math.random() * 20 + 8}px`
+          : `${Math.random() * 35 + 10}px`,
+      delay: Math.random() * 2, // Delay inicial para espalhar as animações
+    }));
+  }
+  return [];
 };
 
 export default function Abastecimento() {

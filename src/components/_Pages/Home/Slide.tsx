@@ -40,6 +40,7 @@ export default function SlideHome() {
 
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [count, setCount] = useState(0);
 
   useEffect(() => {

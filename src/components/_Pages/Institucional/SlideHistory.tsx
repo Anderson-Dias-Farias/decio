@@ -126,6 +126,7 @@ const historyData = [
 
 export default function SlideHistory() {
   const [api, setApi] = useState<CarouselApi>();
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [current, setCurrent] = useState(0);
 
   useEffect(() => {
