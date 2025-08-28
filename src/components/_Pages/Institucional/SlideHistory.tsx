@@ -115,7 +115,12 @@ const historyData = [
   },
   {
     year: "2024",
-    description: "Em janeiro é inaugurado o Decio TRR em Ituiutaba-MG.",
+    description:
+      "Em janeiro é inaugurado o Decio TRR em Ituiutaba-MG, Pres. Venceslau - SP, Barreiras - BA.",
+  },
+  {
+    year: "2025",
+    description: "Inaugurado o Decio Cezarina em Cezarina - GO.",
   },
 ];
 

@@ -28,9 +28,8 @@ const menuItems = [
     label: "Postos e Estações de Serviço",
     href: "/produtos-e-servicos/postos-estacoes",
   },
-  { label: "Institucional", href: "/institucional" },
-  { label: "Contato", href: "/contato" },
-  { label: "Blog Décio", href: "/blog-decio" },
+  { label: "Grupo Decio", href: "/grupo-decio" },
+  { label: "Blog Decio", href: "/blog-decio" },
 ];
 
 const menuLinks = ({
@@ -88,7 +87,7 @@ const menuLinks = ({
                 }
               >
                 <PopoverTrigger asChild>
-                  <button className="flex items-center gap-1 text-white hover:text-[#EFA573] transition-colors duration-200 cursor-pointer">
+                  <button className="flex items-center gap-1 text-white hover:text-green-500 transition-colors duration-200 cursor-pointer">
                     <span>{item.label}</span>
                     <ChevronDown
                       className={`w-4 h-4 transition-transform duration-200 ${
@@ -106,7 +105,7 @@ const menuLinks = ({
                       <button
                         key={subItem.label}
                         onClick={() => handleSelectChange(subItem.href)}
-                        className="w-full text-left text-white  px-3 cursor-pointer py-2 text-sm rounded-md hover:bg-blue-50 hover:text-[#EFA573] transition-colors duration-200"
+                        className="w-full text-left text-white  px-3 cursor-pointer py-2 text-sm rounded-md hover:bg-blue-50 hover:text-green-500 transition-colors duration-200"
                       >
                         {subItem.label}
                       </button>
@@ -117,7 +116,7 @@ const menuLinks = ({
             ) : !isMobile && !item.submenu ? (
               <Link
                 href={item.href}
-                className="hover:text-[#EFA573] transition-colors duration-200"
+                className="hover:text-green-500 transition-colors duration-200"
                 onClick={handleLinkClick}
               >
                 {item.label}
@@ -135,7 +134,7 @@ const menuLinks = ({
                     <Link
                       key={subItem.label}
                       href={subItem.href}
-                      className="block py-2 px-4 text-blue-200 hover:text-[#EFA573] hover:bg-white/10 rounded-md transition-colors duration-200"
+                      className="block py-2 px-4 text-blue-200 hover:text-green-500 hover:bg-white/10 rounded-md transition-colors duration-200"
                       onClick={handleLinkClick}
                     >
                       {subItem.label}
@@ -146,7 +145,7 @@ const menuLinks = ({
             ) : isMobile && !item.submenu ? (
               <Link
                 href={item.href}
-                className="flex items-center justify-between py-3 px-4 hover:text-[#EFA573] hover:bg-white/10 rounded-md w-full transition-colors duration-200"
+                className="flex items-center justify-between py-3 px-4 hover:text-green-500 hover:bg-white/10 rounded-md w-full transition-colors duration-200"
                 onClick={handleLinkClick}
               >
                 <span>{item.label}</span>
@@ -164,7 +163,7 @@ const menuLinks = ({
           }`}
           onClick={handleLinkClick}
         >
-          Parceiro Decio
+          Abasteça sua frota
         </Button>
       </div>
     </div>
@@ -194,7 +193,7 @@ export default function Header() {
           <Link href="/" onClick={() => setIsOpen(false)}>
             <Image
               src="/assets/decio-logo-1.png"
-              alt="Décio"
+              alt="Decio"
               width={160}
               height={60}
               className="h-10 sm:h-12 md:h-14 w-auto"

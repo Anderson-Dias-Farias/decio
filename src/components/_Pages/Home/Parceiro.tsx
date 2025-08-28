@@ -50,7 +50,7 @@ export default function Parceiro() {
               >
                 Seja um
                 <br />
-                Parceiro Décio
+                Parceiro Decio
               </motion.h2>
               <motion.p
                 initial={{ opacity: 0, y: 20 }}

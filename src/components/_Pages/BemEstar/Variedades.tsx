@@ -34,7 +34,7 @@ export default function Variedades() {
   ];
 
   return (
-    <section className="py-16 bg-white w-full">
+    <section id="variedades" className="py-16 bg-white w-full">
       <div className="container mx-auto px-4 lg:px-8 w-full">
         <div className="flex flex-col gap-8 items-center w-full">
           {variedades.map((variedade, index) => (

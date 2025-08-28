@@ -1,17 +1,21 @@
 import { ArrowRightIcon } from "lucide-react";
+import Link from "next/link";
 
 export default function Ctalinks() {
   const itens = [
     {
       title: "Encontre uma Estação de Serviços",
+      href: "/produtos-e-servicos/postos-estacoes",
     },
 
     {
       title: "Conheça Nossos Serviços",
+      href: "/produtos-e-servicos/acessorios",
     },
 
     {
       title: "Trabalhe Conosco",
+      href: "https://jobs.recrutei.com.br/grupo-decio",
     },
   ];
 
@@ -30,7 +34,8 @@ export default function Ctalinks() {
         </div>
         <div className="w-full h-full sm:min-h-[265px] text-white flex flex-col gap-4 items-center justify-center">
           {itens.map((item) => (
-            <div
+            <Link
+              href={item.href}
               key={item.title}
               className="flex w-full items-center gap-2 text-md font-semibold min-h-[60px] md:min-h-[100px] bg-green-600 rounded-xl p-4 md:p-6"
             >
@@ -38,7 +43,7 @@ export default function Ctalinks() {
               <h1 className="text-sm md:text-xl lg:text-2xl font-semibold">
                 {item.title}
               </h1>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

@@ -21,21 +21,30 @@ const combustiveis = [
     id: 0,
     name: "Gasolina Comum",
     description: "Ideal para uso diário em veículos leves",
-    color: "#213762",
-    gradient: "linear-gradient(to top, #213762, #2d4a78, #3a5d94)",
-    waveColor: "#3a5d94",
+    color: "#FF9800",
+    gradient: "linear-gradient(to top, #FF9800, #ffab33, #ffbd5c)",
+    waveColor: "#ffab33",
   },
   {
     id: 1,
     name: "Gasolina Aditivada",
     description:
       "Mais proteção para o motor, com aditivos que limpam e preservam.",
-    color: "#FF9800",
-    gradient: "linear-gradient(to top, #FF9800, #ffab33, #ffbd5c)",
-    waveColor: "#ffab33",
+    color: "#213762",
+    gradient: "linear-gradient(to top, #213762, #2d4a78, #3a5d94)",
+    waveColor: "#3a5d94",
   },
   {
     id: 2,
+    name: "Gasolina Premium",
+    description:
+      "Gasolina mais refinada, com maior rendimento e menor emissão de poluentes.",
+    color: "#FFC107",
+    gradient: "linear-gradient(to top, #FFC107, #ffd54f, #ffe082)",
+    waveColor: "#ffe082",
+  },
+  {
+    id: 3,
     name: "Etanol",
     description: "Renovável e menos poluente. Boa opção para veículos flex.",
     color: "#8BC34A",
@@ -43,30 +52,42 @@ const combustiveis = [
     waveColor: "#9ccc65",
   },
   {
-    id: 3,
+    id: 4,
     name: "Diesel S500",
     description: "Indicado para motores antigos e veículos pesados.",
+    color: "#FF2C2C",
+    gradient: "linear-gradient(to top, #FF2C2C, #ff4444, #ff5c5c)",
+    waveColor: "#ff5c5c",
+  },
+  {
+    id: 5,
+    name: "Diesel S10",
+    description: "Mais moderno e ecológico, com baixo teor de enxofre.",
     color: "#9E9E9E",
     gradient: "linear-gradient(to top, #9E9E9E, #b3b3b3, #c7c7c7)",
     waveColor: "#b3b3b3",
   },
-  {
-    id: 4,
-    name: "Diesel S10",
-    description: "Mais moderno e ecológico, com baixo teor de enxofre.",
-    color: "#03A9F4",
-    gradient: "linear-gradient(to top, #03A9F4, #29b6f6, #4fc3f7)",
-    waveColor: "#29b6f6",
-  },
 ];
+
+// Bolhas fixas - criadas uma vez e reutilizadas
+const createFixedBubbles = () => {
+  return Array.from({ length: 45 }, (_, i) => ({
+    id: i,
+    left: `${Math.random() * 100}%`,
+    duration: Math.random() * 3 + 2,
+    size:
+      window.innerWidth < 768
+        ? `${Math.random() * 20 + 8}px`
+        : `${Math.random() * 35 + 10}px`,
+    delay: Math.random() * 2, // Delay inicial para espalhar as animações
+  }));
+};
 
 export default function Abastecimento() {
   const [selectedCombustivel, setSelectedCombustivel] = useState(0);
   const [backgroundCombustivel, setBackgroundCombustivel] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
-  const [bubbles, setBubbles] = useState<
-    Array<{ id: number; left: string; duration: string; size: string }>
-  >([]);
+  const [bubbles] = useState(createFixedBubbles); // Bolhas fixas
 
   // Adicionar estilos CSS quando o componente montar
   useEffect(() => {
@@ -76,36 +97,6 @@ export default function Abastecimento() {
 
     return () => {
       document.head.removeChild(style);
-    };
-  }, []);
-
-  // Bolhas contínuas - OTIMIZADO
-  useEffect(() => {
-    const bubbleInterval = setInterval(() => {
-      // Criar múltiplas bolhas de uma vez
-      for (let i = 0; i < 2; i++) {
-        // Reduzido de 5 para 3
-        const newBubble = {
-          id: Math.random(),
-          left: `${Math.random() * 100}%`,
-          duration: `${Math.random() * 3 + 2}s`,
-          // Tamanho responsivo apenas para mobile
-          size:
-            window.innerWidth < 768
-              ? `${Math.random() * 20 + 8}px` // Mobile: 8-28px
-              : `${Math.random() * 35 + 10}px`, // Desktop: 10-45px
-        };
-        setBubbles((prev) => [...prev, newBubble]);
-        setTimeout(() => {
-          setBubbles((prev) =>
-            prev.filter((bubble) => bubble.id !== newBubble.id)
-          );
-        }, 4000); // Reduzido de 7000ms para 4000ms
-      }
-    }, 50); // Reduzido de 20ms para 50ms
-
-    return () => {
-      clearInterval(bubbleInterval);
     };
   }, []);
 
@@ -223,7 +214,7 @@ export default function Abastecimento() {
           </motion.div>
         </motion.div>
 
-        {/* Bolhas */}
+        {/* Bolhas FIXAS - apenas animadas, não criadas/destruídas */}
         <div
           className="absolute bottom-0 left-0 w-full h-full pointer-events-none overflow-hidden"
           style={{ zIndex: 3 }}
@@ -232,10 +223,17 @@ export default function Abastecimento() {
             <motion.div
               key={bubble.id}
               initial={{ y: "100vh", opacity: 1, scale: 0 }}
-              animate={{ y: "-30vh", opacity: 0, scale: 1.5 }}
+              animate={{
+                y: "-30vh",
+                opacity: 0,
+                scale: 1.5,
+              }}
               transition={{
-                duration: parseFloat(bubble.duration) * 0.3,
+                duration: bubble.duration,
                 ease: "easeOut",
+                delay: bubble.delay,
+                repeat: Infinity, // Loop infinito
+                repeatDelay: 1, // Pausa de 1s entre loops
               }}
               className="absolute rounded-full shadow-2xl"
               style={{

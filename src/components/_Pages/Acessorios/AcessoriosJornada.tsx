@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function AcessoriosJornada() {
   return (
-    <section className="py-16 lg:py-24 bg-white">
+    <section id="jornada" className="py-16 lg:py-24 bg-white">
       <motion.div
         className="container mx-auto px-4 lg:px-8"
         initial={{ opacity: 0, y: 50 }}

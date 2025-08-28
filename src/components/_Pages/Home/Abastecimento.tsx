@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import { Play } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Abastecimento() {
   return (
@@ -38,11 +39,14 @@ export default function Abastecimento() {
                 de qualidade comprovada
               </span>
             </div>
-            <span className="text-[#197CA2] hidden font-semibold text-md sm:flex items-center gap-2 mt-4 lg:mt-8 hover:text-[#146B8C] transition-colors duration-200 cursor-pointer">
+            <Link
+              href="/produtos-e-servicos/abastecimento"
+              className="text-[#197CA2] hidden font-semibold text-md sm:flex items-center gap-2 mt-4 lg:mt-8 hover:text-[#146B8C] transition-colors duration-200 cursor-pointer"
+            >
               <Play className="w-4 h-4" /> Gasolina, etanol e diesel com selo de
               <br className="block md:hidden" />
               qualidade comprovada
-            </span>
+            </Link>
           </motion.div>
 
           {/* Imagem da bomba - responsiva */}

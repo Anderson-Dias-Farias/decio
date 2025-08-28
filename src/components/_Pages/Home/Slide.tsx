@@ -7,6 +7,7 @@ import {
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
 const slides = [
@@ -14,6 +15,7 @@ const slides = [
     id: 1,
     image: "/assets/slide-home-1.png",
     alt: "Slide 1",
+    link: "/produtos-e-servicos/alimentacao",
   },
   {
     id: 2,
@@ -78,17 +80,19 @@ export default function SlideHome() {
                   key={slide.id}
                   className="min-w-0 shrink-0 basis-[90vw] max-w-[90vw] md:basis-[557px] md:max-w-[557px]"
                 >
-                  <div className="relative rounded-xl overflow-hidden shadow-lg w-full h-[200px] xs:h-[320px] sm:h-[360px] md:h-[340px] md:w-[557px]">
-                    <Image
-                      src={slide.image}
-                      alt={slide.alt}
-                      fill
-                      className="object-cover object-center"
-                      sizes="(max-width: 768px) 90vw, 557px"
-                      priority={index === 0}
-                      loading={index === 0 ? "eager" : "lazy"}
-                    />
-                  </div>
+                  <Link href={slide.link ?? ""}>
+                    <div className="relative rounded-xl overflow-hidden shadow-lg w-full h-[200px] xs:h-[320px] sm:h-[360px] md:h-[340px] md:w-[557px]">
+                      <Image
+                        src={slide.image}
+                        alt={slide.alt}
+                        fill
+                        className="object-cover object-center"
+                        sizes="(max-width: 768px) 90vw, 557px"
+                        priority={index === 0}
+                        loading={index === 0 ? "eager" : "lazy"}
+                      />
+                    </div>
+                  </Link>
                 </CarouselItem>
               ))}
             </CarouselContent>

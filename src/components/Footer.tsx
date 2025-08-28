@@ -39,7 +39,7 @@ export default function Footer() {
             <div className="w-full md:max-w-[370px] relative min-h-[150px]">
               <Image
                 src="/assets/decio-logo-2.png"
-                alt="Grupo Décio"
+                alt="Grupo Decio"
                 priority
                 fill
                 sizes="100vw"
@@ -218,8 +218,8 @@ export default function Footer() {
 
         <div className="border-t border-blue-500 mt-8 pt-6 text-center">
           <p className="text-sm text-blue-200">
-            © 2024 Grupo Décio. Todos os direitos reservados. Desenvolvimento e
-            comunicação exclusiva.
+            © {new Date().getFullYear()} Grupo Decio. Todos os direitos
+            reservados. Desenvolvimento e comunicação exclusiva.
           </p>
         </div>
       </div>

@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import { Play } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Experiencias() {
   return (
@@ -41,10 +42,13 @@ export default function Experiencias() {
               <h3 className="text-xl md:text-2xl lg:text-4xl font-semibold mb-4">
                 Lojas de Conveniência 24h <br /> e Restaurantes
               </h3>
-              <div className="flex items-center gap-2 text-blue-400 hover:text-blue-200 transition-colors duration-200">
+              <Link
+                href="/produtos-e-servicos/alimentacao"
+                className="flex items-center gap-2 text-blue-400 hover:text-blue-200 transition-colors duration-200"
+              >
                 <Play className="w-4 h-4" />
                 <span>Descubra</span>
-              </div>
+              </Link>
             </div>
           </motion.div>
 
@@ -70,10 +74,13 @@ export default function Experiencias() {
               <h3 className="text-lg md:text-2xl lg:text-4xl font-semibold mb-3">
                 Banheiros Limpos, Estacionamento Seguro <br /> e Muito Mais
               </h3>
-              <div className="flex items-center gap-2 text-blue-400 hover:text-blue-200 transition-colors duration-200">
+              <Link
+                href="/produtos-e-servicos/bem-estar"
+                className="flex items-center gap-2 text-blue-400 hover:text-blue-200 transition-colors duration-200"
+              >
                 <Play className="w-4 h-4" />
                 <span>Conheça</span>
-              </div>
+              </Link>
             </div>
           </motion.div>
 
@@ -99,10 +106,13 @@ export default function Experiencias() {
               <h3 className="text-lg md:text-2xl lg:text-4xl font-semibold mb-3">
                 Acessórios, Utilidades e Conforto para Motoristas
               </h3>
-              <div className="flex items-center gap-2 text-blue-400 hover:text-blue-200 transition-colors duration-200">
+              <Link
+                href="/produtos-e-servicos/acessorios"
+                className="flex items-center gap-2 text-blue-400 hover:text-blue-200 transition-colors duration-200"
+              >
                 <Play className="w-4 h-4" />
                 <span>Saiba mais</span>
-              </div>
+              </Link>
             </div>
           </motion.div>
         </div>

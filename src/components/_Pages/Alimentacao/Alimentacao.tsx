@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function Alimentacao() {
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-white" id="alimentacao">
       <motion.div
         className="max-w-7xl mx-auto px-4"
         initial={{ opacity: 0, y: 50 }}

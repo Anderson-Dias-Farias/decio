@@ -1,5 +1,6 @@
 import { Play } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 const Marcador = ({
   value1,
@@ -38,9 +39,12 @@ export default function Mapa() {
               Presente em 5 estados, atendendo{" "}
               <br className="hidden md:block" /> mais de 23 mil clientes por dia
             </p>
-            <span className="text-[#197CA2] font-semibold text-md flex items-center gap-2 mt-4 mx-auto lg:mx-0 hover:text-[#146B8C] transition-colors duration-200 cursor-pointer">
+            <Link
+              href="/produtos-e-servicos/postos-estacoes"
+              className="text-[#197CA2] font-semibold text-md flex items-center gap-2 mt-4 mx-auto lg:mx-0 hover:text-[#146B8C] transition-colors duration-200 cursor-pointer"
+            >
               <Play className="w-4 h-4" /> Encontre o posto mais próximo
-            </span>
+            </Link>
           </div>
 
           {/* Imagem e Marcadores */}

@@ -14,14 +14,12 @@ export default function Video() {
         <div className="flex flex-col md:flex-row gap-8 lg:gap-12 items-center">
           {/* Texto */}
           <div className="w-full md:max-w-[350px] xl:max-w-[50%]">
-            <p className="font-semibold mb-2 text-sm text-primary">
-              Grupo Décio
-            </p>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-6xl font-semibold text-gray-900 mb-4 lg:mb-6 leading-tight">
+            <p className="font-semibold text-sm text-primary">Grupo Decio</p>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-6xl font-semibold text-gray-900 mb-4 ">
               Movendo o Brasil
               <br className="hidden md:block" /> com Você
             </h2>
-            <p className="text-gray-600 mb-4 lg:mb-6 text-lg sm:text-xl lg:text-xl xl:text-2xl 2xl:text-3xl leading-relaxed">
+            <p className="text-gray-600 text-lg sm:text-xl lg:text-xl xl:text-2xl 2xl:text-3xl ">
               Quase 40 anos abastecendo <br className="hidden md:block" />{" "}
               histórias e transformando
               <br className="hidden sm:block" /> jornadas nas principais rotas
@@ -29,7 +27,7 @@ export default function Video() {
             </p>
             <button
               onClick={() => setIsPlaying(!isPlaying)}
-              className="text-[#197CA2] font-semibold text-md flex items-center gap-2 mt-4 mx-auto lg:mx-0 hover:text-[#146B8C] transition-colors duration-200 cursor-pointer"
+              className="text-[#197CA2] font-semibold text-md flex mt-2 items-center gap-2 md:mt-4 mx-auto lg:mx-0 hover:text-[#146B8C] transition-colors duration-200 cursor-pointer"
             >
               {isPlaying ? (
                 <Pause className="w-4 h-4" />
@@ -49,23 +47,30 @@ export default function Video() {
             <motion.div
               initial={{ rotate: 0 }}
               animate={isInView ? { rotate: 180 } : { rotate: 0 }}
-              transition={{ duration: 0.2, ease: "easeInOut" }}
+              transition={{ duration: 0.5, ease: "easeInOut" }}
               className="bg-primary rounded-2xl lg:rounded-4xl z-10 overflow-hidden w-full h-64 sm:h-96 md:h-80 lg:h-[400px] xl:h-[450px] absolute top-0 left-0 transform -rotate-3 scale-103"
             ></motion.div>
 
             {/* Container do vídeo */}
-            <div className="rounded-2xl lg:rounded-xl z-20 overflow-hidden w-full h-64 sm:h-96 md:h-80 lg:h-[400px] xl:h-[450px] relative shadow-xl">
-              <iframe
-                src={`https://www.youtube.com/embed/wGqY0CWciEE?autoplay=${
-                  isPlaying ? 1 : 0
-                }&mute=0&loop=1&playlist=wGqY0CWciEE&controls=1&modestbranding=1&rel=0&showinfo=0&enablejsapi=1`}
-                title="Grupo Décio - Movendo o Brasil"
-                className="w-full h-full"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
-            </div>
+            <motion.div
+              initial={{ rotate: 0 }}
+              animate={isInView ? { rotate: 360 } : { rotate: 180 }}
+              transition={{ duration: 0.5, ease: "easeInOut" }}
+              className="relative z-20"
+            >
+              <div className="rounded-2xl lg:rounded-xl z-20 overflow-hidden w-full h-64 sm:h-96 md:h-80 lg:h-[400px] xl:h-[450px] relative shadow-xl">
+                <iframe
+                  src={`https://www.youtube.com/embed/wGqY0CWciEE?autoplay=${
+                    isPlaying ? 1 : 0
+                  }&mute=0&loop=1&playlist=wGqY0CWciEE&controls=1&modestbranding=1&rel=0&showinfo=0&enablejsapi=1`}
+                  title="Grupo Decio - Movendo o Brasil"
+                  className="w-full h-full"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
+            </motion.div>
           </div>
         </div>
       </div>

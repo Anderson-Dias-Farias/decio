@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Mapa() {
   return (
-    <section className="py-8 overflow-hidden">
+    <section className="py-8 overflow-hidden" id="abastecimento">
       <div className="max-w-7xl mx-auto px-4 relative">
         <div className="flex flex-col sm:flex-row  sm:gap-16 lg:gap-12 items-center relative">
           {/* Texto */}
@@ -35,7 +35,7 @@ export default function Mapa() {
             </div>
           </div>
         </div>
-        <div className=" lg:absolute text-white  md:max-w-[70%] md:bottom-0  lg:bottom-20  lg:max-w-2xl left-4 bg-green-500 p-4 rounded-lg text-md  transition-colors duration-200 cursor-pointer w-full">
+        <div className=" lg:absolute text-white  md:max-w-[70%] md:bottom-0  lg:bottom-20  lg:max-w-2xl left-4 bg-green-500 p-4 rounded-lg text-md  transition-colors duration-200 w-full">
           Nossas Estações de Serviço são equipadas para oferecer rapidez,
           segurança e conveniência durante o abastecimento, sempre com o
           atendimento cordial que é nossa marca registrada

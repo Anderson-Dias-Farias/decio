@@ -1,10 +1,12 @@
 "use client";
 
+import { useNextSection } from "@/lib/use-next";
 import { motion } from "framer-motion";
 import { Play } from "lucide-react";
 import Image from "next/image";
 
 export default function Hero() {
+  const { scrollToNextSection } = useNextSection();
   return (
     <section className="relative bg-gradient-to-r from-primary to-secondary text-white overflow-hidden min-h-[50vh] sm:min-h-[90vh] flex items-center justify-center">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 h-full min-h-[100%] flex items-start justify-start w-full">
@@ -53,7 +55,10 @@ export default function Hero() {
             Tudo o que seu veículo e sua jornada precisam — de produtos de
             manutenção a acessórios de conforto e segurança.
           </motion.p>
-          <motion.p className="flex items-center gap-2 text-green-500">
+          <motion.p
+            onClick={() => scrollToNextSection("jornada")}
+            className="flex items-center gap-2 text-green-500 cursor-pointer"
+          >
             <Play className="w-6 h-6" />
             <span className="text-sm">Saiba mais</span>
           </motion.p>

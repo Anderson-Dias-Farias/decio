@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import { Play } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 // Adicionando estilos CSS inline para as ondas
@@ -220,18 +221,20 @@ export default function Explore() {
           >
             Explore Nossos Espaços
           </motion.h2>
-          <motion.p
-            className="text-lg lg:text-2xl opacity-90 font-semibold"
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{
-              duration: 0.8,
-              delay: 0.4,
-              ease: "easeOut",
-            }}
-          >
-            Clique e conheça nossas opções de alimentação e conveniência
-          </motion.p>
+          <Link href="/produtos-e-servicos/postos-estacoes">
+            <motion.p
+              className="text-lg lg:text-2xl opacity-90 font-semibold"
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{
+                duration: 0.8,
+                delay: 0.4,
+                ease: "easeOut",
+              }}
+            >
+              Clique e conheça nossas opções de alimentação e conveniência
+            </motion.p>
+          </Link>
         </motion.div>
 
         {/* Botões */}
@@ -305,13 +308,15 @@ export default function Explore() {
                 ease: "easeOut",
               }}
             >
-              <div className="relative w-full h-64 lg:h-96 rounded-lg overflow-hidden">
-                <Image
-                  src="/assets/alimentacao-espaco.png"
-                  alt="Buffet de comida"
-                  fill
-                  className="object-cover object-center"
-                />
+              <div className="relative w-full h-64 lg:h-86 rounded-lg overflow-hidden">
+                <iframe
+                  src="/video.mp4"
+                  title="Video"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture "
+                  allowFullScreen
+                  className="w-full h-full"
+                ></iframe>
               </div>
             </motion.div>
           </motion.div>
