@@ -9,7 +9,7 @@ export default async function PostDetailPage({
 }: {
   params: { id: string };
 }) {
-  const { id } = await params;
+  const { id } = params;
 
   // Busca o post completo
   const response = await prisma.post.findUnique({
