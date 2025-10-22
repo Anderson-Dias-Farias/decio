@@ -11,7 +11,7 @@ type Params = {
 };
 
 export default async function Page({ params }: Params) {
-  const { id } = await params;
+  const { id } = params;
 
   const response = await prisma.post.findUnique({
     where: { id },
