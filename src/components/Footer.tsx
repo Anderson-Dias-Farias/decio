@@ -55,7 +55,7 @@ export default function Footer() {
               {socialMedia.map((item) => (
                 <div
                   key={item.name}
-                  className="w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-200 transition-colors cursor-pointer"
+                  className="w-10 h-10 rounded-full flex items-center justify-center hover:scale-120 hover:shadow-lg transition-colors cursor-pointer"
                 >
                   <Image
                     src={item.icon}

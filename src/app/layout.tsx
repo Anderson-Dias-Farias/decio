@@ -1,3 +1,4 @@
+import { AuthProvider } from "@/components/Providers/auth-provider";
 import LayoutProvider from "@/components/Providers/layoutProvider";
 import { Toaster } from "@/components/ui/sonner";
 import type { Metadata } from "next";
@@ -27,8 +28,11 @@ export default function RootLayout({
         className={`${geistMono.variable} antialiased font-salva overflow-x-hidden`}
         style={{ fontFamily: "Salva, system-ui, sans-serif" }}
       >
-        <LayoutProvider>{children}</LayoutProvider>
-        <Toaster />
+        <AuthProvider>
+          <LayoutProvider>{children}</LayoutProvider>
+
+          <Toaster />
+        </AuthProvider>
       </body>
     </html>
   );

@@ -6,6 +6,7 @@
 @theme inline {
   --breakpoint-xs: 480px;
   --breakpoint-3xl: 1650px;
+  --color-primary: #234c9c;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: "Salva", system-ui, sans-serif;
@@ -35,6 +36,7 @@
   --color-secondary: var(--secondary);
   --color-primary-foreground: var(--primary-foreground);
   --color-primary: var(--primary);
+  --color-primary-500: var(--primary);
   --color-popover-foreground: var(--popover-foreground);
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
@@ -121,7 +123,6 @@
 }
 
 body {
-  color: var(--foreground);
   background: var(--background);
   font-family: var(--font-sans);
   overflow-x: hidden;
@@ -136,7 +137,6 @@ html::-webkit-scrollbar-track {
 html::-webkit-scrollbar-thumb {
   background-color: var(--muted-foreground);
   border-radius: 4px;
-  border: 2px solid var(--background);
 }
 
 /* Text shadow responsivo para mobile */

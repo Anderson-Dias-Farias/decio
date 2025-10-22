@@ -11,7 +11,7 @@ export default function LayoutProvider({
 }) {
   const pathname = usePathname();
 
-  if (pathname.includes("aplicacao")) {
+  if (pathname.includes("aplicacao") || pathname.includes("login")) {
     return <div>{children}</div>;
   }
 
