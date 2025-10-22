@@ -4,11 +4,13 @@ import prisma from "@/lib/prisma";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
 
+type PageProps<T = Record<string, never>> = {
+  params: T;
+};
+
 export default async function PostDetailPage({
   params,
-}: {
-  params: { id: string };
-}) {
+}: PageProps<{ id: string }>) {
   const { id } = params;
 
   // Busca o post completo
