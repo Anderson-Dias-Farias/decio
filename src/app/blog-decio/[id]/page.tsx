@@ -5,9 +5,9 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 
 type Params = {
-  params: Promise<{
+  params: {
     id: string;
-  }>;
+  };
 };
 
 export default async function Page({ params }: Params) {
