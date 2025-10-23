@@ -5,13 +5,13 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 
 type Params = {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 };
 
 export default async function Page({ params }: Params) {
-  const { id } = params;
+  const { id } = await params;
 
   const response = await prisma.post.findUnique({
     where: { id },
