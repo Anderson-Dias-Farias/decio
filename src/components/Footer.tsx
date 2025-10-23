@@ -5,27 +5,33 @@ const socialMedia = [
   {
     name: "Instagram",
     icon: "/assets/instagran.png",
+    url: "https://www.instagram.com/grupodecio/",
   },
   {
     name: "Facebook",
     icon: "/assets/facebook.png",
+    url: "https://pt-br.facebook.com/GrupoDecioOnline/",
   },
 
   {
     name: "Linkedin",
     icon: "/assets/linkedin.png",
+    url: "https://br.linkedin.com/company/grupodecio",
   },
   {
     name: "Youtube",
     icon: "/assets/youtube.png",
+    url: "https://www.youtube.com/channel/UCAIoTTgkXBkXyE_eDTeVfXA",
   },
   {
     name: "Tiktok",
     icon: "/assets/tiktok.png",
+    url: "https://www.tiktok.com/@grupodecio",
   },
   {
-    name: "Booking",
+    name: "TripAdvisor",
     icon: "/assets/booking.png",
+    url: "https://www.tripadvisor.com.br/Profile/grupodecio",
   },
 ];
 
@@ -53,7 +59,10 @@ export default function Footer() {
             </p>
             <div className="flex space-x-3 mb-4">
               {socialMedia.map((item) => (
-                <div
+                <Link
+                  href={item.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   key={item.name}
                   className="w-10 h-10 rounded-full flex items-center justify-center hover:scale-120 hover:shadow-lg transition-colors cursor-pointer"
                 >
@@ -64,7 +73,7 @@ export default function Footer() {
                     height={32}
                     className="w-full h-full object-cover"
                   />
-                </div>
+                </Link>
               ))}
             </div>
             <p className="text-xs text-blue-300">
@@ -144,20 +153,20 @@ export default function Footer() {
                     </a>
                   </li>
                   <li>
-                    <a
-                      href="#"
+                    <Link
+                      href="/aviso-cookies"
                       className="hover:text-blue-200 transition-colors"
                     >
                       Aviso de Cookies
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a
-                      href="#"
+                    <Link
+                      href="/termo-uso"
                       className="hover:text-blue-200 transition-colors"
                     >
                       Termo de Uso do Site
-                    </a>
+                    </Link>
                   </li>
                   <li>
                     <a
@@ -174,12 +183,12 @@ export default function Footer() {
               <div className="relative font-semibold text-[16px] gap-4 pl-4 max-w-1/2">
                 <ul className="space-y-3 text-sm">
                   <li>
-                    <a
-                      href="#"
+                    <Link
+                      href="/aviso-privacidade-externo"
                       className="hover:text-blue-200 transition-colors"
                     >
                       Aviso de Privacidade Externo
-                    </a>
+                    </Link>
                   </li>
                   <li>
                     <a
@@ -190,12 +199,12 @@ export default function Footer() {
                     </a>
                   </li>
                   <li>
-                    <a
-                      href="#"
+                    <Link
+                      href="/aviso-privacidade-interno"
                       className="hover:text-blue-200 transition-colors"
                     >
                       Aviso de Privacidade Interno
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </div>
@@ -207,9 +216,14 @@ export default function Footer() {
               </p>
               <p className="text-[16px]">
                 Clique{" "}
-                <a href="#" className="underline hover:text-blue-200">
+                <Link
+                  href="http://www.contatoseguro.com.br/grupodecio"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline hover:text-blue-200"
+                >
                   AQUI
-                </a>{" "}
+                </Link>{" "}
                 ou ligue <span className="font-medium">0800 800 1216</span>
               </p>
             </div>
