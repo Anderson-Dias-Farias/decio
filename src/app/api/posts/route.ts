@@ -28,6 +28,7 @@ export async function POST(request: Request) {
     const content = formData.get("content") as string;
     const excerpt = formData.get("excerpt") as string;
     const isPublished = formData.get("isPublished") === "true";
+    const publishedAt = formData.get("publishedAt") as string;
     const coverImage = formData.get("coverImage") as File | null;
 
     // Validação dos campos obrigatórios
@@ -54,6 +55,7 @@ export async function POST(request: Request) {
       content,
       image: compressedBuffer,
       published: isPublished,
+      publishedAt: publishedAt ? new Date(publishedAt) : null,
     };
 
     const post = await prisma.post.create({
@@ -103,6 +105,7 @@ export async function PUT(request: Request) {
     const content = formData.get("content") as string;
     const excerpt = formData.get("excerpt") as string;
     const isPublished = formData.get("isPublished") === "true";
+    const publishedAt = formData.get("publishedAt") as string;
     const coverImage = formData.get("coverImage") as File | null;
 
     // Validação dos campos obrigatórios
@@ -128,12 +131,14 @@ export async function PUT(request: Request) {
       excerpt: string | null;
       content: string;
       published: boolean;
+      publishedAt: Date | null;
       image?: Buffer;
     } = {
       title,
       excerpt: excerpt || null,
       content,
       published: isPublished,
+      publishedAt: publishedAt ? new Date(publishedAt) : null,
     };
 
     // Só atualizar a imagem se uma nova foi enviada

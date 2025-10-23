@@ -33,7 +33,7 @@ export default function ArticleCard({ article }: { article: Article }) {
         <div className="flex flex-col gap-4 xs:gap-0 xs:flex-row items-center justify-between mt-4">
           <Link
             href={`/blog-decio/${article.id}`}
-            className="flex  items-center gap-2 px-2 py-1 bg-primary text-white justify-between rounded-md w-full xs:max-w-[120px] break-words font-medium text-sm hover:bg-[#f3f8fd] transition"
+            className="flex  items-center gap-2 px-2 py-1 bg-primary hover:bg-primary/80 text-white justify-between rounded-md w-full xs:max-w-[120px] break-words font-medium text-sm hover:bg-[#f3f8fd] transition"
           >
             Ler artigo <ArrowBigRightDash className="text-base " />
           </Link>

@@ -169,12 +169,12 @@ export default function Footer() {
                     </Link>
                   </li>
                   <li>
-                    <a
-                      href="#"
+                    <Link
+                      href="/divulgacoes-documentos"
                       className="hover:text-blue-200 transition-colors"
                     >
                       Divulgações e Documentos
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </div>
@@ -191,12 +191,12 @@ export default function Footer() {
                     </Link>
                   </li>
                   <li>
-                    <a
-                      href="#"
+                    <Link
+                      href="/relatorio-transparencia-salarial"
                       className="hover:text-blue-200 transition-colors"
                     >
                       Relatório de Transparência Salarial
-                    </a>
+                    </Link>
                   </li>
                   <li>
                     <Link
