@@ -98,7 +98,7 @@ export function RichTextEditor({ content, onChange }: RichTextEditorProps) {
   const editor = useMemo(() => withHistory(withReact(createEditor())), []);
   const [linkDialogOpen, setLinkDialogOpen] = useState(false);
   const [linkUrl, setLinkUrl] = useState("");
-  const [savedSelection, setSavedSelection] = useState<any>(null);
+  const [savedSelection, setSavedSelection] = useState<Selection | null>(null);
 
   const [value, setValue] = useState<Descendant[]>(() => {
     try {
@@ -160,66 +160,67 @@ export function RichTextEditor({ content, onChange }: RichTextEditorProps) {
   }, []);
 
   const renderLeaf = useCallback((props: RenderLeafProps) => {
-    let { attributes, children, leaf } = props;
+    const { attributes, children, leaf } = props;
+    let element = children;
 
     if (leaf.bold) {
-      children = <strong>{children}</strong>;
+      element = <strong>{element}</strong>;
     }
 
     if (leaf.italic) {
-      children = <em>{children}</em>;
+      element = <em>{element}</em>;
     }
 
     if (leaf.underline) {
-      children = <u>{children}</u>;
+      element = <u>{element}</u>;
     }
 
-    // @ts-ignore
+    // @ts-expect-error - Custom leaf property
     if (leaf.strikethrough) {
-      children = <del>{children}</del>;
+      element = <del>{element}</del>;
     }
 
-    // @ts-ignore
+    // @ts-expect-error - Custom leaf property
     if (leaf.fontSize) {
-      children = (
-        // @ts-ignore
-        <span style={{ fontSize: `${leaf.fontSize}px` }}>{children}</span>
+      element = (
+        // @ts-expect-error - Custom leaf property
+        <span style={{ fontSize: `${leaf.fontSize}px` }}>{element}</span>
       );
     }
 
-    // @ts-ignore
+    // @ts-expect-error - Custom leaf property
     if (leaf.url) {
-      children = (
+      element = (
         <a
-          // @ts-ignore
+          // @ts-expect-error - Custom leaf property
           href={leaf.url}
           target="_blank"
           rel="noopener noreferrer"
           className="text-blue-600 underline hover:text-blue-800"
         >
-          {children}
+          {element}
         </a>
       );
     }
 
-    return <span {...attributes}>{children}</span>;
+    return <span {...attributes}>{element}</span>;
   }, []);
 
   const toggleMark = (format: keyof Omit<CustomText, "text">) => {
     const isActive = isMarkActive(format);
 
     if (isActive) {
-      // @ts-ignore
+      // @ts-expect-error - Slate editor API
       editor.removeMark(format);
     } else {
-      // @ts-ignore
+      // @ts-expect-error - Slate editor API
       editor.addMark(format, true);
     }
   };
 
   const isMarkActive = (format: keyof Omit<CustomText, "text">) => {
     const marks = Editor.marks(editor);
-    // @ts-ignore
+    // @ts-expect-error - Slate editor API
     return marks ? marks[format] === true : false;
   };
 
@@ -230,11 +231,10 @@ export function RichTextEditor({ content, onChange }: RichTextEditorProps) {
     const linkActive = isLinkActive();
 
     if (linkActive) {
-      // @ts-ignore
       editor.removeMark("url");
     } else {
       // Salva a seleção atual antes de abrir o dialog
-      setSavedSelection(selection);
+      setSavedSelection(selection as unknown as Selection);
       setLinkDialogOpen(true);
     }
   };
@@ -242,8 +242,8 @@ export function RichTextEditor({ content, onChange }: RichTextEditorProps) {
   const handleLinkSubmit = () => {
     if (linkUrl.trim() && savedSelection) {
       // Restaura a seleção salva
-      Transforms.select(editor, savedSelection);
-      // @ts-ignore
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      Transforms.select(editor, savedSelection as any);
       editor.addMark("url", linkUrl.trim());
       // Força uma atualização
       editor.onChange();
@@ -255,7 +255,7 @@ export function RichTextEditor({ content, onChange }: RichTextEditorProps) {
 
   const isLinkActive = () => {
     const marks = Editor.marks(editor);
-    // @ts-ignore
+    // @ts-expect-error - Slate editor API
     return marks && marks.url;
   };
 
@@ -318,7 +318,7 @@ export function RichTextEditor({ content, onChange }: RichTextEditorProps) {
 
   const isFontSizeActive = (size: number) => {
     const marks = Editor.marks(editor);
-    // @ts-ignore
+    // @ts-expect-error - Slate editor API
     return marks?.fontSize === size;
   };
 
@@ -640,7 +640,7 @@ export function RichTextEditor({ content, onChange }: RichTextEditorProps) {
 
           <Select
             onValueChange={(value) => toggleFontSize(Number(value))}
-            // @ts-ignore
+            // @ts-expect-error - Slate editor API
             value={String(Editor.marks(editor)?.fontSize || 16)}
           >
             <SelectTrigger className="h-8 w-[100px]">

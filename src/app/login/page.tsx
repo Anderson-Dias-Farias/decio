@@ -30,7 +30,7 @@ export default function Login() {
         router.push("/aplicacao");
         toast.success("Login realizado com sucesso!");
       }
-    } catch (error) {
+    } catch {
       toast.error(
         "Erro ao fazer login. Ocorreu um erro ao tentar fazer login."
       );

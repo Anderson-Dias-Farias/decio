@@ -18,7 +18,7 @@ export default async function Page({ searchParams }: PageProps) {
   const { page } = await searchParams;
   const pageNumber = Number(page) || 1;
   const itemsPerPage = 6;
-  const skip = (pageNumber - 1) * itemsPerPage;
+  // const skip = (pageNumber - 1) * itemsPerPage;
 
   const [response, totalArticles] = await Promise.all([
     prisma.post.findMany({

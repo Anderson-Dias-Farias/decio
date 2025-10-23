@@ -4,6 +4,8 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { UseFormWatch } from "react-hook-form";
 import { toast } from "sonner";
 
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 interface AutosaveConfig {
   // ID do item (post ou newsletter) - undefined para criação, string para edição
   itemId?: string;

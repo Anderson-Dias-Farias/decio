@@ -27,7 +27,7 @@ const nextAuthOptions: NextAuthOptions = {
         email: { label: "Email", type: "text" },
         password: { label: "Password", type: "password" },
       },
-      async authorize(credentials, req) {
+      async authorize(credentials) {
         if (!credentials?.email || !credentials?.password) {
           return null;
         }
@@ -54,7 +54,7 @@ const nextAuthOptions: NextAuthOptions = {
           }
 
           return null;
-        } catch (error) {
+        } catch {
           return null;
         }
       },

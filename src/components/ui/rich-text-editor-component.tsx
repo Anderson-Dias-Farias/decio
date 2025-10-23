@@ -111,7 +111,7 @@ const RichTextEditorComponent = ({
           className="p-4 min-h-[400px] focus:outline-none bg-background"
           onKeyDown={(event) => {
             for (const hotkey in HOTKEYS) {
-              if (isHotkey(hotkey, event as any)) {
+              if (isHotkey(hotkey, event as unknown as KeyboardEvent)) {
                 event.preventDefault();
                 const mark = HOTKEYS[hotkey];
                 toggleMark(editor, mark);
