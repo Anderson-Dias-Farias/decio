@@ -5,13 +5,13 @@ import { notFound } from "next/navigation";
 import { Suspense } from "react";
 
 type PageProps<T = Record<string, never>> = {
-  params: T;
+  params: Promise<T>;
 };
 
 export default async function PostDetailPage({
   params,
 }: PageProps<{ id: string }>) {
-  const { id } = params;
+  const { id } = await params;
 
   // Busca o post completo
   const response = await prisma.post.findUnique({
