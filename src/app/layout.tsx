@@ -15,6 +15,21 @@ export const metadata: Metadata = {
   title: "Décio - Energia que Transforma o Seu Dia",
   description:
     "Soluções completas para quem vive na estrada: mentorias, logística e fidelidade em todo o Brasil",
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
+  },
+  openGraph: {
+    images: "/favicon.ico",
+  },
+  twitter: {
+    images: "/favicon.ico",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
