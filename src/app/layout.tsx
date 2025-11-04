@@ -12,7 +12,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Décio - Energia que Transforma o Seu Dia",
+  title: "Decio - Energia que Transforma o Seu Dia",
   description:
     "Soluções completas para quem vive na estrada: mentorias, logística e fidelidade em todo o Brasil",
   icons: {
