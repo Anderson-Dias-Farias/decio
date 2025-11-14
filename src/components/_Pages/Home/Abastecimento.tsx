@@ -35,8 +35,8 @@ export default function Abastecimento() {
                 </p>
               </div>
               <span className="text-[#197CA2] sm:hidden font-semibold text-md flex items-center gap-2 hover:text-[#146B8C] transition-colors duration-200 cursor-pointer">
-                <Play className="w-4 h-4" /> Gasolina, etanol e diesel com selo
-                de qualidade comprovada
+                <Play className="w-4 h-4" /> Gasolina, etanol e diesel com
+                qualidade comprovada.
               </span>
             </div>
             <Link

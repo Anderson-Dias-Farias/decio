@@ -20,6 +20,7 @@ const documentos = [
     data: "08/10/24",
     arquivo: "Ofertas Públicas - NCs Decio I Aviso ao Mercado (v- final).pdf",
     categoria: "Ofertas Públicas",
+    pasta: "oferta-publica",
   },
   {
     id: 2,
@@ -28,6 +29,7 @@ const documentos = [
     data: "08/10/24",
     arquivo: "Ofertas Públicas - NCs_Decio_l_Termo_de_Emissão.pdf",
     categoria: "Ofertas Públicas",
+    pasta: "oferta-publica",
   },
   {
     id: 3,
@@ -35,6 +37,7 @@ const documentos = [
     data: "14/10/24",
     arquivo: "NCs Decio I Anúncio de Início (v- final).pdf",
     categoria: "Ofertas Públicas",
+    pasta: "oferta-publica",
   },
   {
     id: 4,
@@ -42,6 +45,7 @@ const documentos = [
     data: "15/10/24",
     arquivo: "NCs Decio I Anúncio de Encerramento (v- final).pdf",
     categoria: "Ofertas Públicas",
+    pasta: "oferta-publica",
   },
   {
     id: 5,
@@ -49,6 +53,7 @@ const documentos = [
     data: "31/03/25",
     arquivo: "253QH-049-PB Decio Holding (ADC 31-12-24) Final.pdf",
     categoria: "Demonstrações Financeiras",
+    pasta: "oferta-publica",
   },
   {
     id: 6,
@@ -56,6 +61,7 @@ const documentos = [
     data: "31/03/25",
     arquivo: "Oraganograma e atos societários_declaração.pdf",
     categoria: "Atos Societários",
+    pasta: "oferta-publica",
   },
   {
     id: 7,
@@ -63,6 +69,7 @@ const documentos = [
     data: "29/04/25",
     arquivo: "RA_2024_NC_DECIO_1E_US.pdf",
     categoria: "Relatórios Anuais",
+    pasta: "oferta-publica",
   },
   {
     id: 8,
@@ -70,6 +77,23 @@ const documentos = [
     data: "14/10/25",
     arquivo: "RelatorioIgualdadeSalarialLote_2025_2_39848608000297.pdf",
     categoria: "Relatórios de Transparência",
+    pasta: "oferta-publica",
+  },
+  {
+    id: 9,
+    titulo: "Relatório De Equidade Salarial 2025 - Lote 1",
+    data: "14/10/25",
+    arquivo: "RelatorioIgualdadeSalarialLote_2025_1_39848608000297.pdf",
+    categoria: "Relatórios de Transparência",
+    pasta: "relatorio",
+  },
+  {
+    id: 10,
+    titulo: "Relatório De Equidade Salarial 2025 - Lote 2 (Versão 2)",
+    data: "14/10/25",
+    arquivo: "RelatorioIgualdadeSalarialLote_2025_2_39848608000297 1.pdf",
+    categoria: "Relatórios de Transparência",
+    pasta: "relatorio",
   },
 ];
 
@@ -138,7 +162,9 @@ export default function DivulgacoesDocumentos() {
 
                     <div className="flex items-center gap-4">
                       <Link
-                        href={`/assets/pdf/oferta-publica/${documento.arquivo}`}
+                        href={`/assets/pdf/${
+                          documento.pasta || "oferta-publica"
+                        }/${documento.arquivo}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
@@ -148,7 +174,9 @@ export default function DivulgacoesDocumentos() {
                       </Link>
 
                       <a
-                        href={`/assets/pdf/oferta-publica/${documento.arquivo}`}
+                        href={`/assets/pdf/${
+                          documento.pasta || "oferta-publica"
+                        }/${documento.arquivo}`}
                         download={documento.arquivo}
                         className="inline-flex items-center gap-2 px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors"
                       >

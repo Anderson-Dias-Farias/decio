@@ -328,14 +328,7 @@ const postos = [
 ];
 
 export default function Servicos() {
-  const [showAll, setShowAll] = useState(false);
-  const [visibleItems, setVisibleItems] = useState(6);
   const [search, setSearch] = useState("");
-
-  const handleVerMais = () => {
-    setShowAll(!showAll);
-    setVisibleItems(showAll ? 6 : postos.length);
-  };
 
   return (
     <section className="bg-gray-50 py-16 px-4" id="postos">
@@ -392,14 +385,13 @@ export default function Servicos() {
           className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 mb-8"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
           viewport={{ margin: "-100px" }}
         >
           {postos
             .filter((posto) =>
               posto.location.toLowerCase().includes(search.toLowerCase())
             )
-            .slice(0, search.length > 0 ? postos.length : visibleItems) // ← AQUI ESTÁ A CORREÇÃO
             .map((posto, index) => (
               <motion.div
                 key={posto.id}
@@ -407,8 +399,8 @@ export default function Servicos() {
                 initial={{ opacity: 0, y: 30, scale: 0.95 }}
                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
                 transition={{
-                  duration: 0.6,
-                  delay: 0.1 * index,
+                  duration: 0.4,
+                  delay: 0.03 * index,
                   ease: "easeOut",
                 }}
                 whileHover={{
@@ -429,8 +421,8 @@ export default function Servicos() {
                         initial={{ opacity: 0, scale: 0.8 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         transition={{
-                          duration: 0.4,
-                          delay: 0.2 * index + 0.1 * tagIndex,
+                          duration: 0.3,
+                          delay: 0.03 * index + 0.02 * tagIndex,
                         }}
                         viewport={{ margin: "-50px" }}
                       >
@@ -443,8 +435,8 @@ export default function Servicos() {
                         initial={{ opacity: 0, scale: 0.8 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         transition={{
-                          duration: 0.4,
-                          delay: 0.2 * index + 0.1,
+                          duration: 0.3,
+                          delay: 0.03 * index + 0.05,
                         }}
                         viewport={{ margin: "-50px" }}
                       >
@@ -458,7 +450,7 @@ export default function Servicos() {
                     className="text-xl font-semibold text-gray-900"
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.5, delay: 0.3 * index }}
+                    transition={{ duration: 0.3, delay: 0.03 * index + 0.05 }}
                     viewport={{ margin: "-50px" }}
                   >
                     {posto.name}
@@ -469,7 +461,7 @@ export default function Servicos() {
                     className="text-gray-600 mb-4 text-sm"
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.5, delay: 0.3 * index + 0.1 }}
+                    transition={{ duration: 0.3, delay: 0.03 * index + 0.08 }}
                     viewport={{ margin: "-50px" }}
                   >
                     {posto.location}
@@ -480,7 +472,7 @@ export default function Servicos() {
                     className="flex items-center text-blue-400 font-medium hover:text-blue-600 cursor-pointer"
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.5, delay: 0.3 * index + 0.2 }}
+                    transition={{ duration: 0.3, delay: 0.03 * index + 0.1 }}
                     viewport={{ margin: "-50px" }}
                   >
                     <Play className="w-4 h-4 mr-2" />
@@ -492,8 +484,11 @@ export default function Servicos() {
                 {/* Imagem */}
                 <motion.div
                   className="relative h-40 w-full max-w-40 rounded-lg overflow-hidden"
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.3, delay: 0.03 * index + 0.05 }}
                   whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.3 }}
+                  viewport={{ margin: "-50px" }}
                 >
                   <Image
                     src={posto.image}
@@ -505,39 +500,6 @@ export default function Servicos() {
               </motion.div>
             ))}
         </motion.div>
-
-        {/* Botão Ver Mais */}
-        {postos.length > 5 && search.length === 0 && (
-          <motion.div
-            className="text-center"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
-            viewport={{ margin: "-100px" }}
-          >
-            <motion.button
-              onClick={handleVerMais}
-              className="inline-flex items-center text-blue-600 font-medium hover:text-blue-800 transition-colors"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <svg
-                className={`w-4 h-4 mr-2 transition-transform duration-300 ${
-                  showAll ? "rotate-180" : ""
-                }`}
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                  clipRule="evenodd"
-                />
-              </svg>
-              {showAll ? "ver menos" : "ver mais"}
-            </motion.button>
-          </motion.div>
-        )}
       </div>
     </section>
   );

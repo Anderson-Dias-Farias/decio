@@ -154,17 +154,35 @@ const menuLinks = ({
           </div>
         ))}
       </div>
-      <div className={isMobile ? "pt-4 border-t border-white/20 w-full" : ""}>
-        <Button
-          className={`bg-green-500 hover:bg-green-600 text-white rounded-sm px-6 ${
-            isMobile ? "py-3" : "py-2"
-          } rounded-${isMobile ? "md" : "sm"} transition-colors duration-200 ${
-            isMobile ? "w-full" : ""
-          }`}
-          onClick={handleLinkClick}
-        >
-          Abasteça sua frota
-        </Button>
+      <div
+        className={
+          isMobile
+            ? "pt-4 border-t border-white/20 w-full flex flex-col gap-4"
+            : " flex gap-2"
+        }
+      >
+        <Link href="https://jobs.recrutei.com.br/grupo-decio">
+          <Button
+            className={`border-green-500 border-2 hover:bg-green-600 text-white rounded-sm px-6 ${
+              isMobile ? "py-3" : "py-2"
+            } rounded-${
+              isMobile ? "md" : "sm"
+            } transition-colors duration-200 ${isMobile ? "w-full" : ""}`}
+          >
+            Trabalhe conosco
+          </Button>
+        </Link>
+        <Link href="https://jobs.recrutei.com.br/grupo-decio">
+          <Button
+            className={`bg-green-500 hover:bg-green-600 text-white rounded-sm px-6 ${
+              isMobile ? "py-3" : "py-2"
+            } rounded-${
+              isMobile ? "md" : "sm"
+            } transition-colors duration-200 ${isMobile ? "w-full" : ""}`}
+          >
+            Abasteça sua frota
+          </Button>
+        </Link>
       </div>
     </div>
   );
