@@ -172,7 +172,7 @@ const menuLinks = ({
             Trabalhe conosco
           </Button>
         </Link>
-        <Link href="wa.me/553498970118">
+        <Link href="https://wa.me/553498970118" target="_blank">
           <Button
             className={`bg-green-500 hover:bg-green-600 text-white rounded-sm px-6 ${
               isMobile ? "py-3" : "py-2"
