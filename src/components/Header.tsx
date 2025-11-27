@@ -172,7 +172,7 @@ const menuLinks = ({
             Trabalhe conosco
           </Button>
         </Link>
-        <Link href="https://jobs.recrutei.com.br/grupo-decio">
+        <Link href="wa.me/553498970118">
           <Button
             className={`bg-green-500 hover:bg-green-600 text-white rounded-sm px-6 ${
               isMobile ? "py-3" : "py-2"
