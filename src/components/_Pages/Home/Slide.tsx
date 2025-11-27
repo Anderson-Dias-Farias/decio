@@ -5,6 +5,7 @@ import {
   CarouselItem,
   type CarouselApi,
 } from "@/components/ui/carousel";
+import { cn } from "@/lib/utils";
 import Autoplay from "embla-carousel-autoplay";
 import Image from "next/image";
 import Link from "next/link";
@@ -87,7 +88,7 @@ export default function SlideHome() {
                         src={slide.image}
                         alt={slide.alt}
                         fill
-                        className="object-cover object-center"
+                        className={cn("object-cover object-center")}
                         sizes="(max-width: 768px) 90vw, 557px"
                         priority={index === 0}
                         loading={index === 0 ? "eager" : "lazy"}
