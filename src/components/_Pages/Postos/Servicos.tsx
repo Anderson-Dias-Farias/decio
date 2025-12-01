@@ -9,7 +9,8 @@ const postos = [
   {
     id: 1,
     name: "Decio Barreiras",
-    location: "Barreiras - BA",
+    location:
+      "Barreiras - BA | Av. Barão do Rio Branco, n° 5.481 - B. Santo Antônio",
     image: "/assets/decio-barreiras.png", // Substitua pela URL real
     tags: [
       { text: "Estação de Serviço", color: "#EAB308" },
@@ -21,7 +22,7 @@ const postos = [
   {
     id: 2,
     name: "Decio Uberlândia",
-    location: "Uberlândia - MG",
+    location: "Uberlândia - MG | BR 050, km 85",
     image: "/assets/decio-uberlandia.png", // Substitua pela URL real
     tags: [
       { text: "Estação de Serviço", color: "#EAB308" },
@@ -45,7 +46,7 @@ const postos = [
   {
     id: 4,
     name: "Decio Mineiros",
-    location: "Mineiros - GO",
+    location: "Mineiros - GO | BR 364, km 302",
     image: "/assets/decio-mineiros.png", // Substitua pela URL real
     tags: [
       { text: "Estação de Serviço", color: "#EAB308" },
@@ -57,7 +58,7 @@ const postos = [
   {
     id: 5,
     name: "Decio Presidente Venceslau",
-    location: "Pres. Venceslau - SP",
+    location: "Pres. Venceslau - SP | Rod. Raposo Tavares, Km 620",
     image: "/assets/decio-presidente.png", // Substitua pela URL real
     tags: [
       { text: "Estação de Serviço", color: "#EAB308" },
@@ -91,7 +92,7 @@ const postos = [
   {
     id: 8,
     name: "Decio Ituiutaba",
-    location: "Ituiutaba - MG",
+    location: "Ituiutaba - MG | BR 365, km 764",
     image: "/assets/ituiutaba.png", // Substitua pela URL real
     tags: [
       { text: "Estação de Serviço", color: "#EAB308" },
@@ -114,7 +115,7 @@ const postos = [
   {
     id: 10,
     name: "Decio Campina Verde",
-    location: "Campina Verde - MG",
+    location: "Campina Verde - MG | BR 364, km 152",
     image: "/assets/campina-verde.png", // Substitua pela URL real
     tags: [
       { text: "Estação de Serviço", color: "#EAB308" },
@@ -126,7 +127,7 @@ const postos = [
   {
     id: 11,
     name: "Decio Centralina",
-    location: "Centralina - MG",
+    location: "Centralina - MG | BR 153, km 17",
     image: "/assets/centralina.png", // Substitua pela URL real
     tags: [
       { text: "Estação de Serviço", color: "#EAB308" },
@@ -150,7 +151,7 @@ const postos = [
   {
     id: 13,
     name: "Decio Parada Bonita",
-    location: "Uberlândia - MG",
+    location: "Uberlândia - MG | BR 365, km 640",
     image: "/assets/parada-bonita.png", // Substitua pela URL real
     tags: [
       { text: "Estação de Serviço", color: "#EAB308" },
@@ -162,7 +163,7 @@ const postos = [
   {
     id: 14,
     name: "Decio Buruti",
-    location: "Uberlândia - MG",
+    location: "Uberlândia - MG | BR 050, km 61",
     image: "/assets/buruti.png", // Substitua pela URL real
     tags: [
       { text: "Estação de Serviço", color: "#EAB308" },
@@ -185,7 +186,7 @@ const postos = [
   {
     id: 16,
     name: "Decio Rio Verde",
-    location: "Rio Verde - GO",
+    location: "Rio Verde - GO | BR 060, km 377",
     image: "/assets/rio-verde.png", // Substitua pela URL real
     tags: [
       { text: "Estação de Serviço", color: "#EAB308" },
@@ -197,7 +198,7 @@ const postos = [
   {
     id: 17,
     name: "Decio Gurupi",
-    location: "Gurupi - TO",
+    location: "Gurupi - TO | BR 153, km 665",
     image: "/assets/gurupi.png", // Substitua pela URL real
     tags: [
       { text: "Estação de Serviço", color: "#EAB308" },
@@ -220,7 +221,7 @@ const postos = [
   {
     id: 19,
     name: "Decio Olhos D’Água",
-    location: "Uberlândia - MG",
+    location: "Uberlândia - MG | BR 365, km 604",
     image: "/assets/olhos-agua.png", // Substitua pela URL real
     tags: [
       { text: "Estação de Serviço", color: "#EAB308" },
@@ -321,7 +322,7 @@ const postos = [
   {
     id: 32,
     name: "Decio Cezarina",
-    location: "Cezarina - GO",
+    location: "Cezarina - GO | BR 060, Km 72",
     image: "/assets/cezarina.png", // Substitua pela URL real
     tags: [{ text: "Distribuição", color: "#396500" }],
   },
