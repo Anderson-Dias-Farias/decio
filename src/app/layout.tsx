@@ -15,12 +15,17 @@ export const metadata: Metadata = {
   title: "Decio - Energia que Transforma o Seu Dia",
   description:
     "Soluções completas para quem vive na estrada: mentorias, logística e fidelidade em todo o Brasil",
+  authors: { name: "Anderson D Faria", url: "https://www.adfdeveloper.com.br" },
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon.ico",
     apple: "/favicon.ico",
   },
   openGraph: {
+    url: "https://www.grupodecio.com.br",
+    siteName: "Grupo Decio",
+    type: "website",
+    locale: "pt-BR",
     images: "/favicon.ico",
   },
   twitter: {
@@ -29,6 +34,9 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+  },
+  alternates: {
+    canonical: "https://www.grupodecio.com.br",
   },
 };
 
