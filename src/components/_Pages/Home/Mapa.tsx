@@ -75,7 +75,7 @@ export default function Mapa() {
               <Marcador
                 value1="Mais de"
                 number="1 milhão"
-                value2="De clientes atendidos por dia"
+                value2="De clientes atendidos por mês"
               />
             </div>
           </div>
