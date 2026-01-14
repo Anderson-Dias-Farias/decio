@@ -20,7 +20,7 @@ export default function Video() {
               <br className="hidden md:block" /> com Você
             </h2>
             <p className="text-gray-600 text-lg sm:text-xl lg:text-xl xl:text-2xl 2xl:text-3xl ">
-              Quase 40 anos abastecendo <br className="hidden md:block" />{" "}
+              Há 40 anos abastecendo <br className="hidden md:block" />{" "}
               histórias e transformando
               <br className="hidden sm:block" /> jornadas nas principais rotas
               do país

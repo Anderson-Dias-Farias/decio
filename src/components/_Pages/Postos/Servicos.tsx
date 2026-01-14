@@ -12,6 +12,7 @@ const postos = [
     location:
       "Barreiras - BA | Av. Barão do Rio Branco, n° 5.481 - B. Santo Antônio",
     image: "/assets/decio-barreiras.png", // Substitua pela URL real
+    showSaibaMais: true,
     tags: [
       { text: "Estação de Serviço", color: "#EAB308" },
       { text: "Rodovia", color: "#6B7280" },
@@ -24,6 +25,7 @@ const postos = [
     name: "Decio Uberlândia",
     location: "Uberlândia - MG | BR 050, km 85",
     image: "/assets/decio-uberlandia.png", // Substitua pela URL real
+    showSaibaMais: true,
     tags: [
       { text: "Estação de Serviço", color: "#EAB308" },
       { text: "Rodovia", color: "#6B7280" },
@@ -48,6 +50,7 @@ const postos = [
     name: "Decio Mineiros",
     location: "Mineiros - GO | BR 364, km 302",
     image: "/assets/decio-mineiros.png", // Substitua pela URL real
+    showSaibaMais: true,
     tags: [
       { text: "Estação de Serviço", color: "#EAB308" },
       { text: "Rodovia", color: "#6B7280" },
@@ -60,6 +63,7 @@ const postos = [
     name: "Decio Presidente Venceslau",
     location: "Pres. Venceslau - SP | Rod. Raposo Tavares, Km 620",
     image: "/assets/decio-presidente.png", // Substitua pela URL real
+    showSaibaMais: true,
     tags: [
       { text: "Estação de Serviço", color: "#EAB308" },
       { text: "Rodovia", color: "#6B7280" },
@@ -82,6 +86,7 @@ const postos = [
     name: "Decio Araporã",
     location: "Araporã - MG",
     image: "/assets/arapora.png", // Substitua pela URL real
+    showSaibaMais: true,
     tags: [
       { text: "Estação de Serviço", color: "#EAB308" },
       { text: "Rodovia", color: "#6B7280" },
@@ -94,6 +99,7 @@ const postos = [
     name: "Decio Ituiutaba",
     location: "Ituiutaba - MG | BR 365, km 764",
     image: "/assets/ituiutaba.png", // Substitua pela URL real
+    showSaibaMais: true,
     tags: [
       { text: "Estação de Serviço", color: "#EAB308" },
       { text: "Rodovia", color: "#6B7280" },
@@ -117,6 +123,7 @@ const postos = [
     name: "Decio Campina Verde",
     location: "Campina Verde - MG | BR 364, km 152",
     image: "/assets/campina-verde.png", // Substitua pela URL real
+    showSaibaMais: true,
     tags: [
       { text: "Estação de Serviço", color: "#EAB308" },
       { text: "Rodovia", color: "#6B7280" },
@@ -129,6 +136,7 @@ const postos = [
     name: "Decio Centralina",
     location: "Centralina - MG | BR 153, km 17",
     image: "/assets/centralina.png", // Substitua pela URL real
+    showSaibaMais: true,
     tags: [
       { text: "Estação de Serviço", color: "#EAB308" },
       { text: "Rodovia", color: "#6B7280" },
@@ -153,6 +161,7 @@ const postos = [
     name: "Decio Parada Bonita",
     location: "Uberlândia - MG | BR 365, km 640",
     image: "/assets/parada-bonita.png", // Substitua pela URL real
+    showSaibaMais: true,
     tags: [
       { text: "Estação de Serviço", color: "#EAB308" },
       { text: "Rodovia", color: "#6B7280" },
@@ -165,6 +174,7 @@ const postos = [
     name: "Decio Buruti",
     location: "Uberlândia - MG | BR 050, km 61",
     image: "/assets/buruti.png", // Substitua pela URL real
+    showSaibaMais: true,
     tags: [
       { text: "Estação de Serviço", color: "#EAB308" },
       { text: "Rodovia", color: "#6B7280" },
@@ -188,6 +198,7 @@ const postos = [
     name: "Decio Rio Verde",
     location: "Rio Verde - GO | BR 060, km 377",
     image: "/assets/rio-verde.png", // Substitua pela URL real
+    showSaibaMais: true,
     tags: [
       { text: "Estação de Serviço", color: "#EAB308" },
       { text: "Rodovia", color: "#6B7280" },
@@ -200,6 +211,7 @@ const postos = [
     name: "Decio Gurupi",
     location: "Gurupi - TO | BR 153, km 665",
     image: "/assets/gurupi.png", // Substitua pela URL real
+    showSaibaMais: true,
     tags: [
       { text: "Estação de Serviço", color: "#EAB308" },
       { text: "Rodovia", color: "#6B7280" },
@@ -220,9 +232,10 @@ const postos = [
   },
   {
     id: 19,
-    name: "Decio Olhos D’Água",
+    name: "Decio Olhos D'Água",
     location: "Uberlândia - MG | BR 365, km 604",
     image: "/assets/olhos-agua.png", // Substitua pela URL real
+    showSaibaMais: true,
     tags: [
       { text: "Estação de Serviço", color: "#EAB308" },
       { text: "Rodovia", color: "#6B7280" },
@@ -324,6 +337,7 @@ const postos = [
     name: "Decio Cezarina",
     location: "Cezarina - GO | BR 060, Km 72",
     image: "/assets/cezarina.png", // Substitua pela URL real
+    showSaibaMais: true,
     tags: [{ text: "Distribuição", color: "#396500" }],
   },
 ];
@@ -469,18 +483,20 @@ export default function Servicos() {
                   </motion.p>
 
                   {/* Link Saiba Mais */}
-                  <motion.div
-                    className="flex items-center text-blue-400 font-medium hover:text-blue-600 cursor-pointer"
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.3, delay: 0.03 * index + 0.1 }}
-                    viewport={{ margin: "-50px" }}
-                  >
-                    <Play className="w-4 h-4 mr-2" />
-                    <span className=" transition-colors cursor-pointer">
-                      Saiba mais
-                    </span>
-                  </motion.div>
+                  {posto.showSaibaMais && (
+                    <motion.div
+                      className="flex items-center text-blue-400 font-medium hover:text-blue-600 cursor-pointer"
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.3, delay: 0.03 * index + 0.1 }}
+                      viewport={{ margin: "-50px" }}
+                    >
+                      <Play className="w-4 h-4 mr-2" />
+                      <span className=" transition-colors cursor-pointer">
+                        Saiba mais
+                      </span>
+                    </motion.div>
+                  )}
                 </div>
                 {/* Imagem */}
                 <motion.div

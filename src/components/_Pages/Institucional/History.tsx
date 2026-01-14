@@ -39,7 +39,7 @@ export default function VariedadesItens() {
               }}
               viewport={{ margin: "-100px" }}
             >
-              Quase 40 Anos <br className="hidden lg:block" /> de História
+              Há 40 Anos <br className="hidden lg:block" /> de História
             </motion.h2>
             <motion.p
               className=" text-base  lg:text-lg leading-relaxed font-semibold"

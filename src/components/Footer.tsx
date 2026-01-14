@@ -53,7 +53,7 @@ export default function Footer() {
               />
             </div>
             <p className="text-sm text-blue-200 mb-6 leading-relaxed md:max-w-sm">
-              Há quase 40 anos transformando a experiência de quem vive a
+              Há 40 anos transformando a experiência de quem vive a
               estrada — com qualidade, estrutura e atendimento que fazem a
               diferença.
             </p>

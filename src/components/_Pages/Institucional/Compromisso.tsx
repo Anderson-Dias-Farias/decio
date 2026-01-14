@@ -79,7 +79,7 @@ export default function Compromisso() {
                   <Marcador
                     value1="Mais de"
                     number="1 milhão"
-                    value2="De clientes por ano"
+                    value2="De clientes por mês"
                   />
                 </AnimatedSection>
               </div>

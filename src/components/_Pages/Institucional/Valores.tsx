@@ -13,26 +13,28 @@ type Values = {
 const values: Values[] = [
   {
     title: "Missão",
-    subtitle: "Transformar o dia a dia das pessoas por meio da energia.",
-    description:
-      "Buscamos ser referência em qualidade, atendimento e relacionamento humano, oferecendo serviços que fazem a diferença na rotina dos nossos clientes.",
+    subtitle:
+      "Ser a energia que transforma o dia a dia das pessoas, sendo referência de qualidade, prestação de serviço e relacionamento humano.",
     image: "/assets/icon-missao.png",
   },
   {
     title: "Visão",
-    subtitle: "Ser o melhor grupo nos segmentos em que atuamos.",
-    description:
-      "Trabalhamos para ser reconhecidos pela excelência no atendimento ao cliente e pela responsabilidade social e ambiental que guiamos em cada decisão.",
+    subtitle:
+      "Ser referência de qualidade, atendimento ao cliente e responsabilidade social e ambiental, tornando-se o melhor grupo nos segmentos em que atua.",
     image: "/assets/icon-visao.png",
   },
   {
     title: "Valores",
-    subtitle: "Nosso jeito de fazer negócios é guiado por princípios sólidos:",
+    subtitle: "",
     list: [
-      "Integridade e respeito",
-      "Empreendedorismo e simplicidade",
-      "Sustentabilidade e qualidade",
-      "Orientação ao cliente e excelência nos serviços",
+      "Integridade",
+      "Empreendedorismo",
+      "Sustentabilidade",
+      "Respeito",
+      "Qualidade",
+      "Simplicidade",
+      "Orientação ao Cliente",
+      "Excelência na prestação de serviços",
     ],
     image: "/assets/icon-valores.png",
   },
@@ -40,11 +42,11 @@ const values: Values[] = [
 
 const Itens = ({ values }: { values: Values }) => {
   return (
-    <div className="flex flex-col items-start justify-center gap-4">
+    <div className="flex flex-col items-start justify-center gap-4 ">
       {
         <div
           key={values.title}
-          className="flex flex-col items-center text-center max-w-[300px] justify-center gap-4 lg:gap-8"
+          className={`flex flex-col max-w-[300px] justify-center gap-4 lg:gap-8 items-center`}
         >
           <Image
             src={values.image.toString()}
@@ -56,15 +58,23 @@ const Itens = ({ values }: { values: Values }) => {
           <h3 className="text-3xl lg:text-5xl font-semibold text-primary">
             {values.title}
           </h3>
-          <p className="text-lg lg:text-xl font-semibold">{values.subtitle}</p>
+          {values.subtitle && (
+            <p className="text-lg lg:text-xl font-semibold text-center">
+              {values.subtitle}
+            </p>
+          )}
           {values.description && (
             <p className="text-base lg:text-lg">{values.description}</p>
           )}
           {values.list && (
-            <ul className="list-disc list-inside">
+            <ul className="list-none space-y-0 text-left w-full">
               {values.list.map((item) => (
-                <li key={item} className="text-base lg:text-lg">
-                  {item}
+                <li
+                  key={item}
+                  className="text-base lg:text-lg flex items-start gap-2"
+                >
+                  <span className="text-primary font-bold mt-1">✓</span>
+                  <span>{item}</span>
                 </li>
               ))}
             </ul>
@@ -90,7 +100,7 @@ export default function Valores() {
           </div>
         </AnimatedSection>
 
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4 w-full mt-12">
+        <div className="flex flex-col md:flex-row items-start justify-between gap-4 w-full mt-12 pt-2 h-full">
           {values.map((value, index) => (
             <AnimatedSection key={value.title} delay={index * 0.2}>
               <Itens values={value} />

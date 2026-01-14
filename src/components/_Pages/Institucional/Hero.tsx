@@ -35,7 +35,7 @@ export default function Hero() {
             viewport={{ once: false, amount: 0.3 }}
             transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
           >
-            Há quase 40 anos, somos o parceiro de confiança de motoristas,
+            Há 40 anos, somos o parceiro de confiança de motoristas,
             viajantes e negócios em todo o Brasil
           </motion.p>
           <motion.p
