@@ -320,25 +320,11 @@ const postos = [
   },
   {
     id: 30,
-    name: "Decio Distribuidora",
-    location: "Uberlândia - MG",
-    image: "/assets/uberlandia-distribuicao.png", // Substitua pela URL real
-    tags: [{ text: "Distribuição", color: "#396500" }],
-  },
-  {
-    id: 31,
-    name: "Decio Distribuidora",
-    location: "Senador Canedo - GO",
-    image: "/assets/canedo-distribuicao.png", // Substitua pela URL real
-    tags: [{ text: "Distribuição", color: "#396500" }],
-  },
-  {
-    id: 32,
     name: "Decio Cezarina",
     location: "Cezarina - GO | BR 060, Km 72",
     image: "/assets/cezarina.png", // Substitua pela URL real
     showSaibaMais: true,
-    tags: [{ text: "Distribuição", color: "#396500" }],
+    tags: [{ text: "Estação de Serviços", color: "#396500" }],
   },
 ];
 
