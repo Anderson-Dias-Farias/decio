@@ -26,7 +26,7 @@ export default function Mapa() {
             {/* Container da imagem */}
             <div className="relative w-full aspect-square max-w-[668px] mx-auto">
               <Image
-                src="/assets/mapa-abastecimento.png"
+                src="/assets/Mapa do Brasil com localizações Décio.png"
                 alt="Mapa do Brasil"
                 fill
                 className="object-contain sm:scale-110 sm:-translate-x-10 lg:-translate-x-0 "

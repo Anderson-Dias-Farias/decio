@@ -26,7 +26,7 @@ const servicos = [
     gradient: "linear-gradient(to top, #660000, #800000, #990000)",
     waveColor: "#800000",
     textColor: "#F00000",
-    image: "/assets/variedades-farmacia.png",
+    image: "/assets/farmacia 2.jpeg",
   },
   {
     id: 1,
@@ -59,7 +59,7 @@ const servicos = [
     gradient: "linear-gradient(to top, #175990, #172F47, #18405D)",
     waveColor: "#172F47",
     textColor: "#00EEFF",
-    image: "/assets/variedades-farmacia.png",
+    image: "/assets/boracharia.png",
   },
   {
     id: 4,
@@ -242,7 +242,7 @@ export default function ExploreServicos() {
                 className={cn(
                   `w-full max-w-30 md:max-w-42 h-8 lg:max-w-56 lg:h-14 text-white rounded-lg flex items-center justify-center py-8 lg:py-10 cursor-pointer transition-all duration-300`,
                   selectedServico === servico.id &&
-                    "border-2 border-white scale-105 shadow-lg"
+                    "border-2 border-white scale-105 shadow-lg",
                 )}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}

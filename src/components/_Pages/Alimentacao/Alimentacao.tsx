@@ -78,7 +78,7 @@ export default function Alimentacao() {
               viewport={{ margin: "-100px" }}
             >
               <Image
-                src="/assets/alimentacao-1.png"
+                src="/assets/decio rio verde.jpg"
                 alt="Posto de combustível visto de cima"
                 fill
                 className="object-cover object-center rounded-lg"
@@ -99,7 +99,7 @@ export default function Alimentacao() {
                 viewport={{ margin: "-100px" }}
               >
                 <Image
-                  src="/assets/alimentacao-2.png"
+                  src="/assets/conveniencia.jpeg"
                   alt="Interior da loja de conveniência"
                   fill
                   className="object-cover object-center rounded-lg"
@@ -117,7 +117,7 @@ export default function Alimentacao() {
                 viewport={{ margin: "-100px" }}
               >
                 <Image
-                  src="/assets/alimentacao-3.png"
+                  src="/assets/alimendacao.jpeg"
                   alt="Interior do restaurante com mesas"
                   fill
                   className="object-cover object-center rounded-lg"

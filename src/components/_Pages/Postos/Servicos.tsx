@@ -24,7 +24,7 @@ const postos = [
     id: 2,
     name: "Decio Uberlândia",
     location: "Uberlândia - MG | BR 050, km 85",
-    image: "/assets/decio-uberlandia.png", // Substitua pela URL real
+    image: "/assets/Decio Uberlandia.jpeg", // Substitua pela URL real
     showSaibaMais: true,
     tags: [
       { text: "Estação de Serviço", color: "#EAB308" },
@@ -197,7 +197,7 @@ const postos = [
     id: 16,
     name: "Decio Rio Verde",
     location: "Rio Verde - GO | BR 060, km 377",
-    image: "/assets/rio-verde.png", // Substitua pela URL real
+    image: "/assets/decio rio verde 2.jpg", // Substitua pela URL real
     showSaibaMais: true,
     tags: [
       { text: "Estação de Serviço", color: "#EAB308" },
@@ -210,7 +210,7 @@ const postos = [
     id: 17,
     name: "Decio Gurupi",
     location: "Gurupi - TO | BR 153, km 665",
-    image: "/assets/gurupi.png", // Substitua pela URL real
+    image: "/assets/Decio Gurupi.jfif", // Substitua pela URL real
     showSaibaMais: true,
     tags: [
       { text: "Estação de Serviço", color: "#EAB308" },
@@ -221,9 +221,9 @@ const postos = [
   },
   {
     id: 18,
-    name: "Decio Rio Verde",
+    name: "Decio L5",
     location: "Rio Verde - GO",
-    image: "/assets/rio-verdel5.png", // Substitua pela URL real
+    image: "/assets/Decio L5.jpg", // Substitua pela URL real
     tags: [
       { text: "Posto de Combustível", color: "#06B6D4" },
       { text: "Urbano", color: "#10B981" },
@@ -276,7 +276,7 @@ const postos = [
     id: 23,
     name: "GURUPI – TO",
     location: "BR 153, Km 665,3",
-    image: "/assets/gurupi-ttr.png", // Substitua pela URL real
+    image: "/assets/TRR Gurupi.jpeg", // Substitua pela URL real
     tags: [{ text: "Decio TTR", color: "#18B2AA" }],
   },
   {
@@ -294,14 +294,14 @@ const postos = [
     id: 25,
     name: "ITUMBIARA – GO",
     location: "BR 452, Km 195,3",
-    image: "/assets/itumbiara.png", // Substitua pela URL real
+    image: "/assets/trr itumbiara.jpeg", // Substitua pela URL real
     tags: [{ text: "Decio TTR", color: "#18B2AA" }],
   },
   {
     id: 27,
     name: "ITUIUTABA – MG",
     location: "BR 365, Km 764",
-    image: "/assets/ituiutaba-ttr.png", // Substitua pela URL real
+    image: "/assets/trr ituiutaba.jpeg", // Substitua pela URL real
     tags: [{ text: "Decio TTR", color: "#18B2AA" }],
   },
   {
@@ -315,7 +315,7 @@ const postos = [
     id: 29,
     name: "UBERLÂNDIA – MG",
     location: "BR-365, Km 640",
-    image: "/assets/uberlandia.png", // Substitua pela URL real
+    image: "/assets/trr uberlandia.jpeg", // Substitua pela URL real
     tags: [{ text: "Decio TTR", color: "#18B2AA" }],
   },
   {
@@ -391,7 +391,7 @@ export default function Servicos() {
         >
           {postos
             .filter((posto) =>
-              posto.location.toLowerCase().includes(search.toLowerCase())
+              posto.location.toLowerCase().includes(search.toLowerCase()),
             )
             .map((posto, index) => (
               <motion.div

@@ -10,20 +10,20 @@ const acessorios = [
     color: "bg-[#00726B]",
     list: [
       {
-        img: "/assets/acessorios-1.png",
+        img: "/assets/graxa.jpg",
         title: "Desengraxante Multiuso Spray 500ml",
       },
       {
-        img: "/assets/acessorios-2.png",
+        img: "/assets/limpador de parabrisa.png",
         title: "Limpador de Parabrisa Concentrado 1L",
       },
 
       {
-        img: "/assets/acessorios-3.png",
+        img: "/assets/pano microfibra.jpg",
         title: "Pano Microfibra Extra Resistente",
       },
       {
-        img: "/assets/acessorios-3.png",
+        img: "/assets/escova cerdas duras.png",
         title: "Escova de cerdas duras para limpeza de rodas",
       },
     ],
@@ -35,7 +35,7 @@ const acessorios = [
     color: "bg-[#040A34]",
     list: [
       {
-        img: "/assets/acessorios-1.png",
+        img: "/assets/almofada pescoço.jpg",
         title: "Almofada de pescoço com espuma",
       },
       {
@@ -43,7 +43,7 @@ const acessorios = [
         title: "Ventilador veicular com encaixe em 12V",
       },
       {
-        img: "/assets/acessorios-3.png",
+        img: "/assets/tapete.jpg",
         title: "Tapete térmico para descanso dos pés",
       },
       {

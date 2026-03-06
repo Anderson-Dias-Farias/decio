@@ -10,7 +10,7 @@ export default function Cta() {
     },
     {
       title: "Posto de Combustível",
-      url: "/assets/cta-abastecimento-2.png",
+      url: "/assets/abastecimento.jpeg",
     },
     {
       title: "Motorista Profissional",
@@ -67,7 +67,7 @@ export default function Cta() {
                   alt={item.title}
                   fill
                   className={cn(
-                    "w-full h-full object-cover object-center scale-101"
+                    "w-full h-full object-cover object-center scale-101",
                   )}
                   style={{
                     objectPosition: "center",

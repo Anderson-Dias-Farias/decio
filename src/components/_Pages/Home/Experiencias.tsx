@@ -27,15 +27,18 @@ export default function Experiencias() {
             viewport={{ once: false, amount: 0.3 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
           >
-            <Image
-              src="/assets/conveniencia.png"
-              alt="Restaurante 24h"
-              fill
-              priority
-              className="object-cover transition-transform duration-300 group-hover:scale-105"
-              sizes="(max-width: 1024px) 100vw, 50vw"
-            />
-            <div className="absolute inset-0 p-6 md:p-8 flex flex-col justify-center gap-4 max-w-lg">
+            <div className="relative h-full w-full">
+              <div className="absolute inset-0 bg-gradient-to-l from-transparent to-black/90 z-10"></div>
+              <Image
+                src="/assets/conveniencia 2.jpeg"
+                alt="Restaurante 24h"
+                fill
+                priority
+                className="object-cover transition-transform duration-300 group-hover:scale-105"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+            </div>
+            <div className="absolute inset-0 p-6 md:p-8 flex flex-col justify-center gap-4 max-w-lg z-20">
               <div className="text-sm text-gray-200 mb-2">
                 Sabores para Sua Jornada
               </div>

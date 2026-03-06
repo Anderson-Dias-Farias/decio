@@ -95,7 +95,7 @@ export default function AcessoriosJornada() {
             viewport={{ margin: "-100px" }}
           >
             <Image
-              src="/assets/acessorios-2.png"
+              src="/assets/acessorios.jpeg"
               alt="Vista aérea de estação de serviço"
               fill
               className="object-cover object-center"

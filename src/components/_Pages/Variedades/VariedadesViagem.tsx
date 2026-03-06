@@ -97,7 +97,7 @@ export default function Alimentacao() {
                 viewport={{ margin: "-100px" }}
               >
                 <Image
-                  src="/assets/variedades-2.png"
+                  src="/assets/variedades-bordados.png"
                   alt="Interior da loja de conveniência"
                   fill
                   className="object-cover object-center rounded-lg"
@@ -115,7 +115,7 @@ export default function Alimentacao() {
                 viewport={{ margin: "-100px" }}
               >
                 <Image
-                  src="/assets/variedades-3.png"
+                  src="/assets/conveniencia.jpeg"
                   alt="Interior do restaurante com mesas"
                   fill
                   className="object-cover object-center rounded-lg"
