@@ -97,7 +97,7 @@ const documentos = [
   },
   {
     id: 11,
-    titulo: "Relatório Anual do Agente Fiduciário - Exercício 2025",
+    titulo: "Demonstrações Financeiras 2025",
     data: "31/03/26",
     arquivo: "263UC-020-PB Decio Holding (ADC 31-12-25).pdf",
     categoria: "Demonstrações Financeiras",
