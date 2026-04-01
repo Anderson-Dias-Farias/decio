@@ -95,7 +95,43 @@ const documentos = [
     categoria: "Relatórios de Transparência",
     pasta: "relatorio",
   },
+  {
+    id: 11,
+    titulo: "Relatório Anual do Agente Fiduciário - Exercício 2025",
+    data: "31/03/26",
+    arquivo: "263UC-020-PB Decio Holding (ADC 31-12-25).pdf",
+    categoria: "Demonstrações Financeiras",
+    publicRoot: true,
+  },
+  {
+    id: 12,
+    titulo: "Organograma, atos societários e declaração - 2026.1",
+    data: "31/03/26",
+    arquivo: "Organograma, atos societários e declaração - 2026.1.pdf",
+    categoria: "Atos Societários",
+    publicRoot: true,
+  },
+  {
+    id: 13,
+    titulo: "Covenants 2025",
+    data: "31/03/26",
+    arquivo: "Covenants 2025.pdf",
+    categoria: "Covenants",
+    publicRoot: true,
+  },
 ];
+
+function getPdfHref(documento: {
+  arquivo: string;
+  pasta?: string;
+  publicRoot?: boolean;
+}) {
+  if (documento.publicRoot) {
+    return `/${encodeURIComponent(documento.arquivo)}`;
+  }
+  const pasta = documento.pasta ?? "oferta-publica";
+  return `/assets/pdf/${pasta}/${documento.arquivo}`;
+}
 
 const categorias = [
   "Ofertas Públicas",
@@ -103,6 +139,7 @@ const categorias = [
   "Atos Societários",
   "Relatórios Anuais",
   "Relatórios de Transparência",
+  "Covenants",
 ];
 
 export default function DivulgacoesDocumentos() {
@@ -162,9 +199,7 @@ export default function DivulgacoesDocumentos() {
 
                     <div className="flex items-center gap-4">
                       <Link
-                        href={`/assets/pdf/${
-                          documento.pasta || "oferta-publica"
-                        }/${documento.arquivo}`}
+                        href={getPdfHref(documento)}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
@@ -174,9 +209,7 @@ export default function DivulgacoesDocumentos() {
                       </Link>
 
                       <a
-                        href={`/assets/pdf/${
-                          documento.pasta || "oferta-publica"
-                        }/${documento.arquivo}`}
+                        href={getPdfHref(documento)}
                         download={documento.arquivo}
                         className="inline-flex items-center gap-2 px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors"
                       >
