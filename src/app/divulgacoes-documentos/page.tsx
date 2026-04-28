@@ -119,6 +119,14 @@ const documentos = [
     categoria: "Covenants",
     publicRoot: true,
   },
+  {
+    id: 14,
+    titulo: "Relatório Anual do Agente Fiduciário - Exercício 2025",
+    data: "28/04/26",
+    arquivo: "RA_2025_NC_DECIO_1E_US.pdf",
+    categoria: "Relatórios Anuais",
+    pasta: "",
+  },
 ];
 
 function getPdfHref(documento: {
@@ -130,6 +138,9 @@ function getPdfHref(documento: {
     return `/${encodeURIComponent(documento.arquivo)}`;
   }
   const pasta = documento.pasta ?? "oferta-publica";
+  if (!pasta) {
+    return `/assets/pdf/${documento.arquivo}`;
+  }
   return `/assets/pdf/${pasta}/${documento.arquivo}`;
 }
 
