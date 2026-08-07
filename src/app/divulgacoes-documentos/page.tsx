@@ -127,6 +127,14 @@ const documentos = [
     categoria: "Relatórios Anuais",
     pasta: "",
   },
+  {
+    id: 15,
+    titulo: "PA-GO-0001 - Aviso de Privacidade Interno - R2",
+    data: "07/08/26",
+    arquivo: "PA-GO-0001 - Aviso de Privacidade Interno - R2.pdf",
+    categoria: "Avisos",
+    pasta: "",
+  },
 ];
 
 function getPdfHref(documento: {
@@ -151,6 +159,7 @@ const categorias = [
   "Relatórios Anuais",
   "Relatórios de Transparência",
   "Covenants",
+  "Avisos",
 ];
 
 export default function DivulgacoesDocumentos() {
