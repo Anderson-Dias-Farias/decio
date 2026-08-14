@@ -135,6 +135,14 @@ const documentos = [
     categoria: "Avisos",
     pasta: "",
   },
+  {
+    id: 16,
+    titulo: "Relatório de Transparência",
+    data: "14/08/26",
+    arquivo: "RELATORIO DE TRANSPARENCIA.pdf",
+    categoria: "Relatórios de Transparência",
+    publicRoot: true,
+  },
 ];
 
 function getPdfHref(documento: {
