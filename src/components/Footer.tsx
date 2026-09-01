@@ -169,6 +169,14 @@ export default function Footer() {
                   </li>
                   <li>
                     <Link
+                      href="/termo-uso-trecho"
+                      className="hover:text-blue-200 transition-colors"
+                    >
+                      Termo de Uso Trecho
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
                       href="/divulgacoes-documentos"
                       className="hover:text-blue-200 transition-colors"
                     >
