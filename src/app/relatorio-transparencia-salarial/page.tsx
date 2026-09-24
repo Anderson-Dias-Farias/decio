@@ -21,6 +21,7 @@ const relatorios = [
     cnpj: "19.046.218/001187",
     arquivo: "Relatório de Transparência - 19046218001187.pdf",
     categoria: "1º Ciclo 2024",
+    pasta: "relatorio",
   },
   {
     id: 2,
@@ -30,6 +31,7 @@ const relatorios = [
     cnpj: "06.698.533/0002-56",
     arquivo: "Relatório de Transparência - 06698533000256.pdf",
     categoria: "1º Ciclo 2024",
+    pasta: "relatorio",
   },
   {
     id: 3,
@@ -39,6 +41,7 @@ const relatorios = [
     cnpj: "39.848.608/0002-97",
     arquivo: "Relatório de Transparência - 39848608000297.pdf",
     categoria: "1º Ciclo 2024",
+    pasta: "relatorio",
   },
   {
     id: 4,
@@ -48,6 +51,7 @@ const relatorios = [
     cnpj: "19.046.218/001187",
     arquivo: "Decio Comercio - 19046218001187 - Relatório 2ºCiclo.pdf",
     categoria: "2º Ciclo 2024",
+    pasta: "relatorio",
   },
   {
     id: 5,
@@ -57,6 +61,7 @@ const relatorios = [
     cnpj: "06.698.533/0002-56",
     arquivo: "Decio Gurupi - 06698533000256 - Relatório 2º Ciclo.pdf",
     categoria: "2º Ciclo 2024",
+    pasta: "relatorio",
   },
   {
     id: 6,
@@ -66,10 +71,76 @@ const relatorios = [
     cnpj: "39.848.608/0002-97",
     arquivo: "Decio Holding - 39848608000297 - Relatório 2º ciclo.pdf",
     categoria: "2º Ciclo 2024",
+    pasta: "relatorio",
+  },
+  {
+    id: 7,
+    titulo: "Relatório De Equidade Salarial - 1º Ciclo de 2025",
+    ciclo: "1º CICLO DE 2025",
+    empresa: "Decio Holding S/A",
+    cnpj: "39.848.608/0002-97",
+    arquivo: "RelatorioIgualdadeSalarialLote_2025_1_39848608000297.pdf",
+    categoria: "1º Ciclo 2025",
+    pasta: "relatorio",
+  },
+  {
+    id: 8,
+    titulo: "Relatório De Equidade Salarial - 2º Ciclo de 2025",
+    ciclo: "2º CICLO DE 2025",
+    empresa: "Decio Holding S/A",
+    cnpj: "39.848.608/0002-97",
+    arquivo: "RelatorioIgualdadeSalarialLote_2025_2_39848608000297.pdf",
+    categoria: "2º Ciclo 2025",
+    pasta: "oferta-publica",
+  },
+  {
+    id: 9,
+    titulo: "Relatório De Equidade Salarial - 2º Ciclo de 2025 (Versão 2)",
+    ciclo: "2º CICLO DE 2025",
+    empresa: "Decio Holding S/A",
+    cnpj: "39.848.608/0002-97",
+    arquivo: "RelatorioIgualdadeSalarialLote_2025_2_39848608000297 1.pdf",
+    categoria: "2º Ciclo 2025",
+    pasta: "relatorio",
+  },
+  {
+    id: 10,
+    titulo: "Relatório de Transparência",
+    ciclo: "1º CICLO DE 2026",
+    arquivo: "RELATORIO DE TRANSPARENCIA.pdf",
+    categoria: "1º Ciclo 2026",
+    publicRoot: true,
+  },
+  {
+    id: 11,
+    titulo: "Relatório De Equidade Salarial - 2º Ciclo de 2026",
+    ciclo: "2º CICLO DE 2026",
+    arquivo: "RelatorioIgualdadeSalarialLote_2026_2_19046218006570.pdf",
+    categoria: "2º Ciclo 2026",
+    publicRoot: true,
   },
 ];
 
-const ciclos = ["1º Ciclo 2024", "2º Ciclo 2024"];
+const ciclos = [
+  "1º Ciclo 2024",
+  "2º Ciclo 2024",
+  "1º Ciclo 2025",
+  "2º Ciclo 2025",
+  "1º Ciclo 2026",
+  "2º Ciclo 2026",
+];
+
+function getPdfHref(relatorio: {
+  arquivo: string;
+  pasta?: string;
+  publicRoot?: boolean;
+}) {
+  if (relatorio.publicRoot) {
+    return `/${encodeURIComponent(relatorio.arquivo)}`;
+  }
+  const pasta = relatorio.pasta ?? "relatorio";
+  return `/assets/pdf/${pasta}/${relatorio.arquivo}`;
+}
 
 export default function RelatorioTransparenciaSalarial() {
   return (
@@ -135,18 +206,22 @@ export default function RelatorioTransparenciaSalarial() {
                       {relatorio.titulo}
                     </h3>
 
-                    <div className="flex items-center gap-2 mb-4 text-sm text-gray-600">
-                      <Building2 className="w-4 h-4" />
-                      <span className="font-medium">{relatorio.empresa}</span>
-                    </div>
+                    {"empresa" in relatorio && relatorio.empresa && (
+                      <div className="flex items-center gap-2 mb-4 text-sm text-gray-600">
+                        <Building2 className="w-4 h-4" />
+                        <span className="font-medium">{relatorio.empresa}</span>
+                      </div>
+                    )}
 
-                    <p className="text-sm text-gray-500 mb-4">
-                      CNPJ: {relatorio.cnpj}
-                    </p>
+                    {"cnpj" in relatorio && relatorio.cnpj && (
+                      <p className="text-sm text-gray-500 mb-4">
+                        CNPJ: {relatorio.cnpj}
+                      </p>
+                    )}
 
                     <div className="flex items-center gap-4">
                       <Link
-                        href={`/assets/pdf/relatorio/${relatorio.arquivo}`}
+                        href={getPdfHref(relatorio)}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
@@ -156,7 +231,7 @@ export default function RelatorioTransparenciaSalarial() {
                       </Link>
 
                       <a
-                        href={`/assets/pdf/relatorio/${relatorio.arquivo}`}
+                        href={getPdfHref(relatorio)}
                         download={relatorio.arquivo}
                         className="inline-flex items-center gap-2 px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors"
                       >

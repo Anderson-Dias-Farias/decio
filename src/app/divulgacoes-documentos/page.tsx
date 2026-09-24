@@ -72,30 +72,6 @@ const documentos = [
     pasta: "oferta-publica",
   },
   {
-    id: 8,
-    titulo: "Relatório De Equidade Salarial 2025",
-    data: "14/10/25",
-    arquivo: "RelatorioIgualdadeSalarialLote_2025_2_39848608000297.pdf",
-    categoria: "Relatórios de Transparência",
-    pasta: "oferta-publica",
-  },
-  {
-    id: 9,
-    titulo: "Relatório De Equidade Salarial 2025 - Lote 1",
-    data: "14/10/25",
-    arquivo: "RelatorioIgualdadeSalarialLote_2025_1_39848608000297.pdf",
-    categoria: "Relatórios de Transparência",
-    pasta: "relatorio",
-  },
-  {
-    id: 10,
-    titulo: "Relatório De Equidade Salarial 2025 - Lote 2 (Versão 2)",
-    data: "14/10/25",
-    arquivo: "RelatorioIgualdadeSalarialLote_2025_2_39848608000297 1.pdf",
-    categoria: "Relatórios de Transparência",
-    pasta: "relatorio",
-  },
-  {
     id: 11,
     titulo: "Demonstrações Financeiras 2025",
     data: "31/03/26",
@@ -135,14 +111,6 @@ const documentos = [
     categoria: "Avisos",
     pasta: "",
   },
-  {
-    id: 16,
-    titulo: "Relatório de Transparência",
-    data: "14/08/26",
-    arquivo: "RELATORIO DE TRANSPARENCIA.pdf",
-    categoria: "Relatórios de Transparência",
-    publicRoot: true,
-  },
 ];
 
 function getPdfHref(documento: {
@@ -165,7 +133,6 @@ const categorias = [
   "Demonstrações Financeiras",
   "Atos Societários",
   "Relatórios Anuais",
-  "Relatórios de Transparência",
   "Covenants",
   "Avisos",
 ];
