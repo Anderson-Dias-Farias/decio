@@ -64,12 +64,12 @@ const historyData = [
   {
     year: "2011",
     description:
-      "É inaugurado, em 16 de janeiro, o Decio L2 e, em 10 de julho, o Decio L3, ambos localizados em Ituiutaba-MG. No dia 13 de dezembro é inaugurado em Rio Verde-GO uma filial do Decio TRR.",
+      "É inaugurado, em 16 de janeiro, o Decio L2 (atual Decio Universitário) e, em 10 de julho, o Decio L3 (atual Decio Contorno), ambos localizados em Ituiutaba-MG. No dia 13 de dezembro é inaugurado em Rio Verde-GO uma filial do Decio TRR.",
   },
   {
     year: "2012",
     description:
-      "São inaugurados os postos Decio L5, Decio L6 e Decio L7 em Rio Verde-GO. Em agosto é inaugurado o Decio Uberlândia, em Uberlândia-MG.",
+      "São inaugurados os postos Decio L5 (atual Decio Solar do Agreste), Decio L6 (atual Decio Morada do Sol) e Decio L7 (atual Decio Veneza) em Rio Verde-GO. Em agosto é inaugurado o Decio Uberlândia, em Uberlândia-MG.",
   },
   {
     year: "2013",
@@ -77,17 +77,17 @@ const historyData = [
   },
   {
     year: "2014",
-    description: "Em janeiro é inaugurado o Decio L13 em Rio Verde-GO.",
+    description: "Em janeiro é inaugurado o Decio L13 (atual Decio VIP) em Rio Verde-GO.",
   },
   {
     year: "2015",
     description:
-      "Em 12 de janeiro foi inaugurado em Ituiutaba-MG o Decio L4 (juntamente com a Drogaria Americana).Em 05 de maio foi inaugurado o Decio L14 em Rio Verde-GO.Em 05 de novembro foi inaugurado o Decio Campina Verde, juntamente com a Drogaria Americana.",
+      "Em 12 de janeiro foi inaugurado em Ituiutaba-MG o Decio L4 (atual Decio Minas Gerais), juntamente com a Drogaria Americana. Em 05 de maio foi inaugurado o Decio L14 (atual Decio Parque das Laranjeiras) em Rio Verde-GO. Em 05 de novembro foi inaugurado o Decio Campina Verde, juntamente com a Drogaria Americana.",
   },
   {
     year: "2016",
     description:
-      "Em agosto é inaugurada a unidade da Drogaria Americana anexa ao Decio L2, em Ituiutaba-MG.",
+      "Em agosto é inaugurada a unidade da Drogaria Americana anexa ao Decio L2 (atual Decio Universitário), em Ituiutaba-MG.",
   },
   {
     year: "2019",
@@ -96,7 +96,7 @@ const historyData = [
   },
   {
     year: "2020",
-    description: "Em julho é reinaugurado o Decio L13 em Rio Verde-GO.",
+    description: "Em julho é reinaugurado o Decio L13 (atual Decio VIP) em Rio Verde-GO.",
   },
   {
     year: "2021",

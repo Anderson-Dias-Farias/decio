@@ -36,7 +36,7 @@ const postos = [
   },
   {
     id: 3,
-    name: "Decio L14",
+    name: "Decio Parque das Laranjeiras",
     location: "Rio Verde - GO",
     image: "/assets/decio-l14.png", // Substitua pela URL real
     tags: [
@@ -109,7 +109,7 @@ const postos = [
   },
   {
     id: 9,
-    name: "Decio L2",
+    name: "Decio Universitário",
     location: "Ituiutaba - MG",
     image: "/assets/ituiutabal2.png", // Substitua pela URL real
     tags: [
@@ -147,7 +147,7 @@ const postos = [
   },
   {
     id: 12,
-    name: "Decio L3",
+    name: "Decio Contorno",
     location: "Ituiutaba - MG",
     image: "/assets/ituiutabal3.png", // Substitua pela URL real
     tags: [
@@ -184,7 +184,7 @@ const postos = [
   },
   {
     id: 15,
-    name: "Decio L4",
+    name: "Decio Minas Gerais",
     location: "Ituiutaba - MG",
     image: "/assets/ituiutabal4.png", // Substitua pela URL real
     tags: [
@@ -221,7 +221,7 @@ const postos = [
   },
   {
     id: 18,
-    name: "Decio L5",
+    name: "Decio Solar do Agreste",
     location: "Rio Verde - GO",
     image: "/assets/Decio L5.jpg", // Substitua pela URL real
     tags: [
@@ -245,7 +245,7 @@ const postos = [
   },
   {
     id: 20,
-    name: "Decio L7",
+    name: "Decio Veneza",
     location: "Rio Verde - GO",
     image: "/assets/rio-verdel7.png", // Substitua pela URL real
     tags: [
@@ -256,7 +256,7 @@ const postos = [
   },
   {
     id: 21,
-    name: "Decio L6",
+    name: "Decio Morada do Sol",
     location: "Rio Verde - GO",
     image: "/assets/rio-verdel6.png", // Substitua pela URL real
     tags: [
@@ -281,7 +281,7 @@ const postos = [
   },
   {
     id: 24,
-    name: "Decio L13",
+    name: "Decio VIP",
     location: "Rio Verde - GO",
     image: "/assets/rio-verdel3.png", // Substitua pela URL real
     tags: [
